@@ -55,6 +55,41 @@ nav .brand-logo {
 .blue.darken-6 {
   background-color: rgba(0,48,98,255) !important;
 }
+.fondo{
+    background-image:linear-gradient(rgba(5,7,12, 0.75), rgba(5,7,12, 0.75)) , url(nacional.png);
+    background-position: 100;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+@media (max-width:700px){
+    header{
+        flex-direction: column;
+    }
+    nav{
+        padding: 10px 0px
+    };
+.fondo{
+    flex-direction: column;
+}}
+.parallax-container .parallax img {
+    opacity: 0;
+    position: absolute;
+    left: 48.94%;
+    bottom: 0;
+    width: 1917px;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.blue-text.text-darken-4 {
+    color: #003062 !important;
+}
+
+
 
 
 </style>
@@ -82,6 +117,19 @@ nav .brand-logo {
     <div class="container blue darken-5"></div>
 </main>
 
+<div class="parallax-container">
+      <div class="parallax"><img src="nacional2.png"></div>
+    </div>
+    <div class="section white">
+      <div class="row container">
+        <h2 class="header blue-text text-darken-4"><b>NACIONAL NACIONAL</h2>
+        <p class="blue-text text-darken-4 lighten-3"><b>EL MAS GRANDE Y LAUREADO CLUB DE AMERICA</p>
+      </div>
+    </div>
+    <div class="parallax-container">
+      <div class="parallax"><img src="equipo2.png"></div>
+    </div>
+
     <footer class="page-footer blue darken-6">
 			<div class="footer-copyright">
 				<div class="container">
@@ -98,6 +146,8 @@ nav .brand-logo {
           document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.tooltipped');
     var instances = M.Tooltip.init(elems, options);
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems, options);
   });
 
         M.AutoInit();
