@@ -21,6 +21,16 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>NACIONAL</title>
+          <style>
+          .fa {
+        display: inline-table;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 24px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        }
+          </style>
     </head>
 
     <body>
@@ -61,7 +71,7 @@
 <footer class="page-footer blue darken-6">
           <div class="container">
             <div class="row">
-              <div class="col l6 s12">
+              <div class="col l5 s12">
               <h5 class="white-text">Redes sociales del club</h5>
               <ul>
                   <a href="https://www.facebook.com/nacional/" class="fa fa-facebook"></a>
@@ -69,13 +79,12 @@
                   <a href="https://www.instagram.com/nacional/?hl=es" class="fa fa-instagram"></a>
                 </ul>
               </div>
-              <div class="col l4 offset-l2 s12">
-              <div class="left"><img src="gif1.gif"></div>
+              <div class="col s6"><img src="gif1.gif" class="logoabajo"></div>
                 <ul class="right">
-                <h5 class="white-text ">Links</h5>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <h5 class="white-text ">Links</h5>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
                 </ul>
               </div>
             </div>
