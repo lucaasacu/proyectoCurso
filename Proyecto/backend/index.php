@@ -12,135 +12,81 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="web/css/materialize.min.css"  media="screen,projection"/>
-
+      <link type="text/css" rel="stylesheet" href="web/estilo.css"  media="screen,projection"/>
+      <!--Iconos w3-->
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <!-- Add icon library -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>NACIONAL</title>
-<style>
-.logo{
-    display: flex;
-
-}
-img{
-    width: 60px;
-    margin: 0 20px;
-
-}
-	
-body {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-        }
-main {
-            flex: 1 0 auto;
-        }
-
-table.striped > tbody > tr:nth-child(odd) {
-            background-color: #b2dfdb;
-        }
-.pagination li.active {
-          background-color: #bbdefb;
-        }
-nav ul a {
-    padding: 0 20px;
-}
-nav .brand-logo {
-    font-size: 2.4rem;
-    padding: 0;
-}
-.blue.darken-5 {
-  background-color: #003062 !important;
-}
-.blue.darken-6 {
-  background-color: rgba(0,48,98,255) !important;
-}
-.fondo{
-    background-image:linear-gradient(rgba(5,7,12, 0.75), rgba(5,7,12, 0.75)) , url(nacional.png);
-    background-position: 100;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-@media (max-width:700px){
-    header{
-        flex-direction: column;
-    }
-    nav{
-        padding: 10px 0px
-    };
-.fondo{
-    flex-direction: column;
-}}
-.parallax-container .parallax img {
-    opacity: 0;
-    position: absolute;
-    left: 48.94%;
-    bottom: 0;
-    width: 1917px;
-    min-width: 100%;
-    min-height: 100%;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
-.blue-text.text-darken-4 {
-    color: #003062 !important;
-}
-
-
-
-
-</style>
     </head>
 
     <body>
-        
-    <main>
-        <nav>
-            <div class="nav-wrapper 
-            blue darken-5">
-                <a href="index.php" class="brand-logo center"><b>Club Nacional de Football</a>
-                <a href="index.php"><img src="logo.png"></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="sass.html" class="tooltipped" data-position="bottom" data-tooltip="Inicio"><i class="material-icons">home</i></a></li>
-                        <li><a href="badges.html" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a></li>
-                        <li><a href="collapsible.html" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
-                        <li><a href="mobile.html"class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
-                        <li><a href="mobile.html"class="tooltipped" data-position="bottom" data-tooltip="Menu" ><i class="material-icons">more_vert</i></a></li>
-                    </ul>
-            </div>
-        </nav>
 
+<!--++++++ Nav bar ++++++-->
+      <main>
+          <nav>
+              <div class="nav-wrapper blue darken-5">
+                  <a href="index.php" class="brand-logo center"><b>Club Nacional de Football</a>
+                  <a href="index.php"><img src="logo.png"></a>
+                      <ul class="right hide-on-med-and-down">
+                          <li><a href="sass.html" class="tooltipped" data-position="bottom" data-tooltip="Inicio"><i class="material-icons">home</i></a></li>
+                          <li><a href="badges.html" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a></li>
+                          <li><a href="collapsible.html" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
+                          <li><a href="mobile.html"class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
+                          <li><a href="mobile.html"class="tooltipped" data-position="bottom" data-tooltip="Menu" ><i class="material-icons">more_vert</i></a></li>
+                      </ul>
+              </div>
+          </nav>
+      <div class="container blue darken-5"></div>
+  </main>
 
-    <div class="container blue darken-5"></div>
-</main>
-
-<div class="parallax-container">
-      <div class="parallax"><img src="nacional2.png"></div>
-    </div>
-    <div class="section white">
-      <div class="row container">
-        <h2 class="header blue-text text-darken-4"><b>NACIONAL NACIONAL</h2>
-        <p class="blue-text text-darken-4 lighten-3"><b>EL MAS GRANDE Y LAUREADO CLUB DE AMERICA</p>
+<!--++++++ Parallax ++++++-->
+      <div class="parallax-container">
+            <div class="parallax"><img src="nacional2.png"></div>
       </div>
-    </div>
-    <div class="parallax-container">
-      <div class="parallax"><img src="equipo2.png"></div>
-    </div>
+        <div class="section white">
+          <div class="row container">
+            <h2 class="header blue-text text-darken-4"><b>NACIONAL NACIONAL</h2>
+            <p class="blue-text text-darken-4 lighten-3"><b>EL MAS GRANDE Y LAUREADO CLUB DE AMERICA</p>
+          </div>
+        </div>
+        <div class="parallax-container">
+          <div class="parallax"><img src="equipo2.png"></div>
+        </div>
 
-    <footer class="page-footer blue darken-6">
-			<div class="footer-copyright">
-				<div class="container">
-						© 2022 Copyright
-                    <div class="right">
-						<a class="grey-text text-lighten-4 right" href="#!">&nbsp;Contacto&nbsp;&nbsp;</a>
-                        <a class="grey-text text-lighten-4 right" href="#!">&nbsp;Panel&nbsp;&nbsp;</a>
-                     </div>
-			    </div>
-    </footer>
-      <!--JavaScript at end of body for optimized loading-->
+<!--++++++ Footer ++++++-->
+<footer class="page-footer blue darken-6">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+              <h5 class="white-text">Redes sociales del club</h5>
+              <ul>
+                  <a href="https://www.facebook.com/nacional/" class="fa fa-facebook"></a>
+                  <a href="https://twitter.com/Nacional" class="fa fa-twitter"></a>
+                  <a href="https://www.instagram.com/nacional/?hl=es" class="fa fa-instagram"></a>
+                </ul>
+              </div>
+              <div class="col l4 offset-l2 s12">
+              <div class="left"><img src="gif1.gif"></div>
+                <ul class="right">
+                <h5 class="white-text ">Links</h5>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container center">
+            <a class="grey-text text-lighten-4" href="#!">¡QUE LO LLEVAN DENTRO COMO LO LLEVO YO!</a>
+            </div>
+          </div>
+</footer>
+<!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="web/js/materialize.min.js"></script>
       <script>
           document.addEventListener('DOMContentLoaded', function() {
