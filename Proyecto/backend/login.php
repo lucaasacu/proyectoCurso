@@ -108,7 +108,7 @@ button, input, select, textarea, optgroup {
 							</div>				
 							<div class="row">
 								<div class="input-field col s12">
-									<input placeholder="Clave" id="clave" type="text" class="validate" name="txtClave">
+									<input placeholder="Clave" id="clave" type="password" class="validate" name="txtClave">
 									<label for="Clave">Clave</label>
 								</div>
 							</div>	

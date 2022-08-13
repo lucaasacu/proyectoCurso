@@ -29,6 +29,7 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>NACIONAL</title>
+      <link rel="icon" href="imagenes/logo.png">
           <style>
           .fa {
         display: inline-table;
@@ -59,7 +60,6 @@
           </style>
     </head>
     <body>
-
 <!--++++++ Nav bar ++++++-->
       <main>
           <nav>
@@ -67,9 +67,9 @@
                   <a href="index.php" class="brand-logo center"><b>Club Nacional de Football</a>
                   <a href="index.php"><img src="imagenes/logo.png"></a>
                       <ul class="right hide-on-med-and-down">
-                          <li><a href="sass.html" class="tooltipped" data-position="bottom" data-tooltip="Inicio"><i class="material-icons">home</i></a></li>
+                          <li><a href="index.php" class="tooltipped" data-position="bottom" data-tooltip="Inicio"><i class="material-icons">home</i></a></li>
                           <li><a href="badges.html" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a></li>
-                          <li><a href="collapsible.html" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
+                          <li><a href="index.php?r=deportistas" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
                           <li><a href="mobile.html"class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
                          <!--Menu para cerrar sesion -->
                             <li>

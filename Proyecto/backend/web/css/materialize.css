@@ -9084,9 +9084,4 @@ input[type=range]::-ms-thumb {
     margin-top: 1.2rem;
   }
 }
-.cambioColor a{
-color: black;
-}
-.cambioColor a:hover {
-  color: red;
-  }
+

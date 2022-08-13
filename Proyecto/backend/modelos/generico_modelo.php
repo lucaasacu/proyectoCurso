@@ -75,6 +75,7 @@ class generico_modelo{
 
 
 }
+echo("hola");
 
 
 
