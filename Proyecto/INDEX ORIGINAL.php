@@ -1,14 +1,26 @@
 <?php
+// LOGIN de la pagina 
+
+
+	@session_start();
+
+	if(isset($_SESSION['usuario']) && $_SESSION['usuario'] != ""){
+		
+	}else{
+		header("Location:login.php");
+	}
+
 
 ?>
+
 <!DOCTYPE html>
   <html>
     <head>
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="../backend/web/css/materialize.css"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="../backend/web/estilo.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="web/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="web/estilo.css"  media="screen,projection"/>
       <!--Iconos w3-->
       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -46,19 +58,20 @@
         }
         
           </style>
-</head>
-<body>
- <!--++++++ Nav bar ++++++-->
- <main>
+    </head>
+    <body>
+
+<!--++++++ Nav bar ++++++-->
+      <main>
           <nav>
               <div class="nav-wrapper blue darken-5">
                   <a href="index.php" class="brand-logo center"><b>Club Nacional de Football</a>
                   <a href="index.php"><img src="imagenes/logo.png"></a>
                       <ul class="right hide-on-med-and-down">
-                          <li><a href="" class="tooltipped" data-position="bottom" data-tooltip="Inicioaaaa"><i class="material-icons">home</i></a></li>
-                          <li><a href="" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a></li>
-                          <li><a href="" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
-                          <li><a href=""class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
+                          <li><a href="index.php" class="tooltipped" data-position="bottom" data-tooltip="Inicio"><i class="material-icons">home</i></a></li>
+                          <li><a href="badges.html" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a></li>
+                          <li><a href="index.php?r=deportistas" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
+                          <li><a href="mobile.html"class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
                          <!--Menu para cerrar sesion -->
                             <li>
                               <a class='dropdown-trigger' href='#' data-target='dropdown1'>
@@ -86,89 +99,18 @@
   </main>
 
 <!--++++++ Parallax ++++++-->
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <br><br>
-
+      <div class="parallax-container">
+            <div class="parallax"><img src="imagenes/nacional2.png"></div>
       </div>
-    </div>
-    <div class="parallax"><img src="imagenes/nacional2.png" alt="Unsplashed background img 1"></div>
-  </div>
-
-
-  <div class="container">
-    <div class="section">
-
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+        <div class="section white">
+          <div class="row container">
+            <h2>NACIONAL</h2>
+            <p class="blue-text text-darken-4 lighten-3"><b>NACIONAL</p>
           </div>
         </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
+        <div class="parallax-container">
+          <div class="parallax"><img src="imagenes/equipo2.png"></div>
         </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-      </div>
-    </div>
-    <div class="parallax"><img src="imagenes/equipo2.png" alt="Unsplashed background img 2"></div>
-  </div>
-
-  <div class="container">
-    <div class="section">
-
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4><b>Un poco de historia</h4>
-          <p class="left-align light">El Club Nacional de Football es una institución deportiva de Uruguay. Fue fundado el 14 de mayo de 1899 en Montevideo, por iniciativa de jóvenes estudiantes de la época, con la intención de consolidar una institución de fútbol para uruguayos criollos frente al predominio de clubes y practicantes extranjeros europeos de este deporte, particularmente ingleses y alemanes, siendo considerado así el "primer equipo criollo" del país y uno de los primeros clubes fundados por nacionales en América.
-            
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="imagenes/nacional3.png" alt="Unsplashed background img 3"></div>
-  </div>
 
 <!--++++++ Footer ++++++-->
 <footer class="page-footer blue darken-6">
@@ -199,10 +141,8 @@
           </div>
 </footer>
 
-
-  <!--  Scripts-->
-  <!--JavaScript at end of body for optimized loading-->
-  <script type="text/javascript" src="../backend/web/js/materialize.min.js"></script>
+<!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="web/js/materialize.min.js"></script>
       <script>
           document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.tooltipped');
@@ -210,12 +150,9 @@
     var elems = document.querySelectorAll('.parallax');
     var instances = M.Parallax.init(elems, options);
   });
+
         M.AutoInit();
 
       </script>
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-
-  </body>
-</html>
+    </body>
+  </html>

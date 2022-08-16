@@ -5,10 +5,8 @@ class generico_modelo{
 
 
     public function traerListado($sql, $arrayData = array()){
-		/*
-			$sql = Es la consulta contra la base de datos
-			$arrayDatos = son los datos que van por parametro en la consulta
-		*/
+
+		
 		include("configuracion/configuracion.php");
 
 		$host 		= $CONFIG['host'];
@@ -75,7 +73,6 @@ class generico_modelo{
 
 
 }
-echo("hola");
 
 
 

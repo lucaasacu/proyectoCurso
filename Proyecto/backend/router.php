@@ -7,14 +7,13 @@
 
 			if($ruta == "deportistas"){
 				include("vistas/deportistas_vista.php");
+			}elseif($ruta == "prueba"){
+				include("modelos/prueba.php");
 			}else{
-				echo("<h1>AAA</h1>");
+				echo("sadasdsd");
+			
 
 			}
-
-		}else{
-
-			echo("<h1>AAAA</h1>");
 		}
 
 

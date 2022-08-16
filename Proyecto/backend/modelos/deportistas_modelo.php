@@ -1,6 +1,5 @@
 <?php
 
-echo("hola");
 
 	require_once("modelos/generico_modelo.php");
 	class deportistas_modelo extends generico_modelo{
@@ -34,6 +33,9 @@ echo("hola");
 		}
 		public function obtenerGenero(){
 			return $this->genero;	
+		}
+		public function obtenerTipoGenero(){
+			return $this->tipoGenero;	
 		}
 		public function obtenerPais(){
 			return $this->Pais;	
@@ -246,9 +248,19 @@ echo("hola");
 			return $totalPaginas;
 
 		}
+		public function listaGenero(){
 
+			$arrayGenero = array();
+			$arrayGenero['Masculino'] = "Masculino";
+			$arrayGenero['Femenino'] = "Femenino";
+			$arrayGenero['Otros'] = "Otros";
+			return $arrayGenero;
+	
+		}
 
 	}
+
+
 
 
 
