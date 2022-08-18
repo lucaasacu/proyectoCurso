@@ -112,6 +112,8 @@
           <div class="parallax"><img src="imagenes/equipo2.png"></div>
         </div>
 
+
+
 <!--++++++ Footer ++++++-->
 <footer class="page-footer blue darken-6">
           <div class="container">

@@ -47,73 +47,66 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>Login</title>
 	  <link rel="icon" href="imagenes/logo.png">
-          <style>
-          .fa {
-        display: inline-table;
-        font: normal normal normal 14px/1 FontAwesome;
-        font-size: 24px;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        }
-        a.ex1:hover, a.ex1:active {color: red;}
-		nav .brand-logo.center {
-    left: 50%;
-    bottom: 5%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
-.fondo{
-    background-image:url(imagenes/blackf.png);
-    background-position: 100;
-    background-size: cover;
-    background-repeat: no-repeat;
-}   
-input#nombre.validate.valid{
-	background-color: transparent;
-	color: white;
-}
-input#clave.validate.valid{
-	background-color: transparent;
-	color: white;
-}
-button, input, select, textarea, optgroup {
-    color: white;
-}
-     
-          </style>
-    </head>
-	<body class="fondo">
+	  <style>
+			body {
+				display: flex;
+				min-height: 100vh;
+				flex-direction: column;
+				background-image: url("../frontend/imagenes/blackff.png");
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			main {
+				flex: 1 0 auto;
+			}
+			table.striped > tbody > tr:nth-child(odd) {
+				background-color: #c5cae9;
+			}
+			.pagination li.active {
+			  background-color: #bbdefb;
+			}
+			.row .col.s6{
+				margin-top: 10%;
+				padding: 4%;
+			}
+			.e1 {
+			padding: 10px;
+			border-radius: 25px;
+			}
+			.e2{
+				bottom: 15px;
+			}
+			.row{
+				margin-bottom:10%;
+			}
+
+
+		</style>
+	</head>
+	<body>
 		<main>
-          <nav>
-              <div class="nav-wrapper blue darken-5">
-                  <a href="index.php" class="brand-logo center"><img src="imagenes/logo.png"></a>
-              </div>
-          </nav>
-      <div class="container blue darken-5 "></div>
 			<div class="container">
 				<div class="row">
-					<br><br><br>
 					<div class="col s3">
 					</div>
-					<div class="col s6 center-align">
+					<div class="col s6 center-align white e1 z-depth-2"><img src="imagenes/logo.png">
 						<div>
-						<h3 style="font-size:300%; color:white;">Inicia sesion</h3>
+							<h2>Login</h2>
 						</div>
 						<form action="login.php?" method="POST" class="col s12">
 							<div class="row">
 								<div class="input-field col s12">
 									<input placeholder="Nombre" id="nombre" type="text" class="validate" name="txtNombre">
-									<label for="Nombre">Nombre</label>
+									<label for="nombre">Nombre</label>
 								</div>
 							</div>				
 							<div class="row">
 								<div class="input-field col s12">
 									<input placeholder="Clave" id="clave" type="password" class="validate" name="txtClave">
-									<label for="Clave">Clave</label>
+									<label for="clave">Clave</label>
 								</div>
 							</div>	
-							<button class="btn waves-effect blue darken-6" type="submit" >Entrar
+							<button class="btn waves-effect waves-light e2 blue darken-5" type="submit" >Entrar
 								<i class="material-icons right">send</i>
 							</button>
 						</form>
@@ -122,15 +115,15 @@ button, input, select, textarea, optgroup {
 					</div>	
 				</div>
 			</div>
-</main>
+		</main>
 		<script type="text/javascript" src="web/js/materialize.min.js"></script>
-			<script>			
-				document.addEventListener('DOMContentLoaded', function() {
-					M.AutoInit();
-					var elems = document.querySelectorAll('.datepicker');
-					var instances = M.Datepicker.init(elems, options);
-				});
-			</script>
+		<script>			
+			document.addEventListener('DOMContentLoaded', function() {
+				M.AutoInit();
+				var elems = document.querySelectorAll('.datepicker');
+				var instances = M.Datepicker.init(elems, options);
+			});
+		</script>
 	</body>
 </html>
 	

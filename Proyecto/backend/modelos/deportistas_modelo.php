@@ -19,7 +19,9 @@
 
 		protected $numero;
 
-		private $totalEnLista = 7;
+		protected $estado;
+
+		private $totalEnLista = 8;
 
 
 		public function obtenerNombre(){
@@ -63,25 +65,16 @@
 		public function ingresar(){
 
 			$arrayRespuesta = array("codigo"=>"", "mensaje"=>"");
-			$sqlDuplicado = "SELECT count(*) AS total FROM deportistas WHERE nombre = :nombre";
-			$arrayDuplicado = array("nombre" => $this->nombre);
+			$sqlDuplicado = "SELECT count(*) AS total FROM deportistas WHERE numero = :numero";
+			$arrayDuplicado = array("numero" => $this->numero);
 			$lista = $this->traerListado($sqlDuplicado, $arrayDuplicado);
 			$totalRegistros = $lista[0]['total'];
 			
 			if($totalRegistros > 0){
 				$arrayRespuesta['codigo'] = "Error";
-				$arrayRespuesta['mensaje'] = "Error el nombre ya se encuentra registrado";
+				$arrayRespuesta['mensaje'] = "Error el numero ya se encuentra registrado";
 				return $arrayRespuesta;
 			}
-
-			if(strlen($this->nombre) < 5 || strlen($this->nombre) > 10){
-				$arrayRespuesta['codigo'] = "Error";
-				$arrayRespuesta['mensaje'] = "El nombre tiene que ser mayor a 5 digitos y menos a 10 digitos";
-				return $arrayRespuesta;
-			}
-
-
-
 			$sql = "INSERT INTO deportistas SET
 						nombre = :nombre,
 						apellido = :apellido,
@@ -89,7 +82,7 @@
 						genero = :genero,
 						pais = :pais,
 						posicion = :posicion,
-						numero = :numero;
+						numero = :numero,
 						estado = 1;";
 
 			$arrayDatos = array(
@@ -115,15 +108,13 @@
 				$arrayRespuesta['mensaje'] = "Error al ingresar deportista";
 			}
 			return $arrayRespuesta;
-
-
 		}
 // Funcion cargar
-		public function cargar($nombre){
+		public function cargar($numero){
 			
 
-			$sql = "SELECT * FROM deportistas WHERE nombre = :nombre";
-			$arrayDatos = array("nombre" => $nombre);
+			$sql = "SELECT * FROM deportistas WHERE numero = :numero";
+			$arrayDatos = array("numero" => $numero);
 			$lista = $this->traerListado($sql, $arrayDatos);
 
 			if(isset($lista[0])){
@@ -133,7 +124,8 @@
 				$this->genero 				= $lista[0]['genero'];
 				$this->pais 				= $lista[0]['pais'];	
 				$this->posicion 			= $lista[0]['posicion'];	
-				$this->numero				= $lista[0]['numero'];	
+				$this->numero				= $lista[0]['numero'];
+				$this->estado 				= $lista[0]['estado'];	
 			}
 
 		}
@@ -141,8 +133,8 @@
 // Funcion borrar
 		public function borrar(){
 			
-			$sql = "UPDATE deportistas SET estado = 0 WHERE nombre = :nombre";
-			$arrayDatos = array("nombre" => $this->nombre);
+			$sql = "UPDATE deportistas SET estado = 0 WHERE numero = :numero";
+			$arrayDatos = array("numero" => $this->numero);
 			$respuesta = $this->ejecutarConsulta($sql, $arrayDatos);
 			
 			if($respuesta){
@@ -159,32 +151,35 @@
 		public function editar(){
 
 			$arrayRespuesta = array("codigo"=>"", "mensaje"=>"");
-			$sqlDuplicado = "SELECT count(*) AS total FROM deportistas WHERE nombre = :nombre";
-			$arrayDuplicado = array("nombre" => $this->nombre);
+			$sqlDuplicado = "SELECT count(*) AS total FROM deportistas WHERE numero = :numero";
+			$arrayDuplicado = array("numero" => $this->numero);
 			$lista = $this->traerListado($sqlDuplicado, $arrayDuplicado);
 			$totalRegistros = $lista[0]['total'];
 			
 			if($totalRegistros == 0){
 				$arrayRespuesta['codigo'] = "Error";
-				$arrayRespuesta['mensaje'] = "Error el nombre no se encuentra registrado";
-				return $arrayRespuesta;
-			}
-
-			if(strlen($this->nombre) < 5 || strlen($this->nombre) > 10){
-				$arrayRespuesta['codigo'] = "Error";
-				$arrayRespuesta['mensaje'] = "El nombre tiene que ser mayor a 5 digitos y menos a 10 digitos";
+				$arrayRespuesta['mensaje'] = "Error el numero no se encuentra registrado";
 				return $arrayRespuesta;
 			}
 
 			$sql = "UPDATE deportistas SET
-						nombre 		= :nombre,
-						apellido	= :apellido,
-						fechaNacimiento = :fechaNacimiento
-					WHERE nombre = :nombre;";
-			$arrayDatos = array(				
-				"nombre" 		=> $this->nombre,
-				"apellido" 		=> $this->apellido,
-				"fechaNacimiento" => $this->fechaNacimiento,
+						nombre 			= :nombre,
+						apellido		= :apellido,
+						fechaNacimiento = :fechaNacimiento,
+						genero 			= :genero
+						pais 			= :pais
+						posicion 		= :posicion,
+					WHERE numero 		= :numero;";
+			$arrayDatos = array(
+
+				"nombre" 				=> $this->nombre,
+				"apellido" 				=> $this->apellido,
+				"fechaNacimiento" 		=> $this->fechaNacimiento,
+				"genero" 				=> $this->genero,
+				"pais" 					=> $this->pais,
+				"posicion" 				=> $this->posicion,
+				"numero" 				=> $this->numero,
+
 			);
 			$respuesta = $this->ejecutarConsulta($sql, $arrayDatos);
 
@@ -193,7 +188,7 @@
 				$arrayRespuesta['mensaje'] = "Deportista editado correctamente";
 			}else{
 				$arrayRespuesta['codigo'] = "Error";
-				$arrayRespuesta['mensaje'] = "Error editanto deportista";
+				$arrayRespuesta['mensaje'] = "Error editando deportista";
 			}
 			return $arrayRespuesta;
 
@@ -248,7 +243,7 @@
 			return $totalPaginas;
 
 		}
-		public function listaGenero(){
+		public function listaTipoGenero(){
 
 			$arrayGenero = array();
 			$arrayGenero['Masculino'] = "Masculino";

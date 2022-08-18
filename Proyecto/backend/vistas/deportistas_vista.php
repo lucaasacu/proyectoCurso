@@ -84,38 +84,70 @@
 
 	$arrayFiltros['pagina'] = $pagina - 1;
 	$listaDeportistas = $objDeportistas->listar($arrayFiltros);
+	$listaGenero = $objDeportistas->listaTipoGenero();
 
 ?>
 <h1>Deportistas</h1>
-
+<style>
+	.dropdown-content {
+    background-color: #003062;
+	}
+</style>
 	  <!-- El modal de ingreso -->
 <div id="modal1" class="modal modal-fixed-footer">
 	<div class="modal-content">
-		<h4>Ingresar deportista</h4>
+		<h3>Ingresar deportista</h4>
+		<br>
 		<div class="row">
 			<form action="index.php?r=<?=$rutaPagina?>" method="POST" class="col s12">
 				<div class="row">
-					<div class="input-field col s12">
-						<input placeholder="nombre" id="nombre" type="text" class="validate" name="txtnombre">
-						<label for="nombre">nombre</label>
-					</div>
-				</div>
-				<div class="row">
 					<div class="input-field col s6">
-						<input placeholder="Nombre" id="nombre" type="text" class="validate" name="txtNombre">
+						<input placeholder="Nombre" id="nombre" type="text" class="validate" name="txtnombre">
 						<label for="nombre">Nombre</label>
 					</div>
 					<div class="input-field col s6">
 						<input placeholder="Apellido" id="apellido" type="text" class="validate" name="txtApellido">
 						<label for="apellido">Apellido</label>
 					</div>
-				</div>	
+				</div>
+
 				<div class="row">
 					<div class="input-field col s6">
-						<input placeholder="Fecha Nacimiento" id="fechaNacimiento" type="date" class="validate" name="txtFechaNacimiento">
-						<label for="fechaNacimiento">Fecha Nacimiento</label>
+						<input placeholder="Fecha Nacimiento" id="Fecha Nacimiento" type="date" class="validate" name="txtFechaNacimiento">
+						<label for="Fecha Nacimiento">Fecha Nacimiento</label>
+					</div>
+				<div class="input-field col s6">
+						<select name="txtGenero">
+							<option value="">Seleccione una opcion</option>
+								<?php foreach($listaGenero as $clave => $valor){
+
+								?>
+									<option value="<?=$clave?>"><?=$valor?></option>
+								<?PHP
+									}
+								?>
+						</select>
+						<label for="genero">Genero</label>
 					</div>
 				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<input placeholder="Pais" id="pais" type="text" class="validate" name="txtPais">
+						<label for="Pais">Pais</label>
+					</div>
+					<div class="input-field col s6">
+						<input placeholder="Posicion" id="posicion" type="text" class="validate" name="txtPosicion">
+						<label for="Posicion">Posicion</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<input placeholder="Numero" id="numero" type="text" class="validate" name="txtNumero">
+						<label for="Numero">Numero</label>
+					</div>
+				</div>
+
+					
 				<button class="btn waves-effect waves-light" type="submit" name="accion" value="ingresar">Enviar
 					<i class="material-icons right">send</i>
 				</button>

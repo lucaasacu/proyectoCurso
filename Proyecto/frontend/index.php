@@ -95,10 +95,20 @@
       </div>
     </div>
     <div class="parallax"><img src="imagenes/nacional2.png" alt="Unsplashed background img 1"></div>
-  </div>
-
-
+    <div class="container white" style="width: 40%">
+    <table class="stripped">
+        <tbody>
+          <tr>
+            <td><img src="imagenes/logo.png" style="width: 7%">Nacional</td>
+            <td>Eclair</td>
+            <td>Jellybean</td>
+          </tr>
+        </tbody>
+      </table> 
+      </div>    
+  </div>    
   <div class="container">
+    
     <div class="section">
 
       <!--   Icon Section   -->
