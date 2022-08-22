@@ -76,7 +76,7 @@
 				return $arrayRespuesta;
 			}
 			$sql = "INSERT INTO deportistas SET
-						nombre = :nombre,
+						nombre 		= :nombre,
 						apellido = :apellido,
 						fechaNacimiento = :fechaNacimiento,
 						genero = :genero,
@@ -207,7 +207,7 @@
 
 				$sql .= " AND (nombre LIKE ('%".$filtros['buscar']."%')
 							OR apellido LIKE ('%".$filtros['buscar']."%')
-							OR nombre LIKE ('%".$filtros['buscar']."%')
+							OR numero LIKE ('%".$filtros['buscar']."%')
 						)
 					";
 			}
@@ -232,7 +232,7 @@
 
 				$sql .= " AND (nombre LIKE ('%".$filtros['buscar']."%')
 							OR apellido LIKE ('%".$filtros['buscar']."%')
-							OR nombre LIKE ('%".$filtros['buscar']."%')
+							OR numero LIKE ('%".$filtros['buscar']."%')
 						)
 					";
 			}

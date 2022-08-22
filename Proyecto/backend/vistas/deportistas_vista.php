@@ -39,10 +39,10 @@
 
 	}	
 
-	if(isset($_POST["accion"]) && $_POST['accion'] == "borrar" && isset($_POST["nombre"]) && $_POST['nombre'] != ""){
+	if(isset($_POST["accion"]) && $_POST['accion'] == "borrar" && isset($_POST["numero"]) && $_POST['numero'] != ""){
 
-		$nombre = $_POST['nombre'];
-		$objDeportistas->cargar($nombre);
+		$numero = $_POST['numero'];
+		$objDeportistas->cargar($numero);
 		$respuesta = $objDeportistas->borrar();
 
 	}
@@ -102,7 +102,7 @@
 			<form action="index.php?r=<?=$rutaPagina?>" method="POST" class="col s12">
 				<div class="row">
 					<div class="input-field col s6">
-						<input placeholder="Nombre" id="nombre" type="text" class="validate" name="txtnombre">
+					<input placeholder="Nombre" id="nombre" type="text" class="validate" name="txtNombre">
 						<label for="nombre">Nombre</label>
 					</div>
 					<div class="input-field col s6">
@@ -259,9 +259,9 @@
 ?>
 	<div class="grey lighten-3 center-align">	
 		<form action="index.php?r=<?=$rutaPagina?>" method="POST" class="col s12">
-			<h3>Borrar deportista</h3>
-			<h4>Desea borrar al deportista? <?=$_GET['deportista']?></h4>
-			<input type="hidden" name="nombre" value="<?=$_GET['deportista']?>">
+			<h3>Borrar Deportista</h3>
+			<h4>Desea borrar al deportista <b><?=$_GET['deportista']?></b>?</h4>
+			<input type="hidden" name="numero" value="<?=$_GET['deportista']?>">
 			<button class="btn waves-effect waves-light red" type="submit" name="accion" value="borrar">Eliminar
 				<i class="material-icons right">deleted</i>
 			</button>
