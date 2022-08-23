@@ -19,6 +19,14 @@
       <title>NACIONAL</title>
       <link rel="icon" href="imagenes/logo.png">
           <style>
+    .row .col.m11 {
+    width: 91.6666666667%;
+    margin-left: auto;
+    left: auto;
+    margin: 30px;
+    right: auto;
+}
+
           .fa {
         display: inline-table;
         font: normal normal normal 14px/1 FontAwesome;
@@ -44,6 +52,17 @@
             float: left;
             margin: 0 0px 0px 20px;
         }
+        .card-panel {
+    border-radius: 14px;
+    border-bottom: 7px solid red;
+      }
+      td{
+        padding: 15px 0px;
+        padding-left: 35px;
+      }
+      .fon{
+        background-color:red;
+      }
         
           </style>
 </head>
@@ -52,7 +71,7 @@
  <main>
           <nav>
               <div class="nav-wrapper blue darken-5">
-                  <a href="index.php" class="brand-logo center"><b>Club Nacional de Football</a>
+                  <a href="index.php" class="brand-logo center"><b>Club Nacional de Football</b></a>
                   <a href="index.php"><img src="imagenes/logo.png"></a>
                       <ul class="right hide-on-med-and-down">
                           <li><a href="" class="tooltipped" data-position="bottom" data-tooltip="Inicioaaaa"><i class="material-icons">home</i></a></li>
@@ -95,13 +114,36 @@
       </div>
     </div>
     <div class="parallax"><img src="imagenes/nacional2.png" alt="Unsplashed background img 1"></div>
-    <div class="container white" style="width: 40%">
+    <div class="container white" style="width: 50%">
     <table class="stripped">
         <tbody>
           <tr>
-            <td><img src="imagenes/logo.png" style="width: 7%">Nacional</td>
-            <td>Eclair</td>
-            <td>Jellybean</td>
+            <td><img src="imagenes/logo.png" style="width: 13%">Nacional</td>
+            <td>2</td>
+            <td>:</td>
+            <td>0</td>
+            <td><img src="imagenes/cuadros/wanderers.png" style="width: 12%">Wanderers</td>
+          </tr>
+          <tr>
+            <td><img src="imagenes/logo.png" style="width: 13%">Nacional</td>
+            <td>1</td>
+            <td>:</td>
+            <td>0</td>
+            <td><img src="imagenes/cuadros/liverpool.png" style="width: 12%">Liverpool</td>
+          </tr>
+          <tr>
+            <td><img src="imagenes/logo.png" style="width: 13%">Nacional</td>
+            <td>0</td>
+            <td>:</td>
+            <td>3</td>
+            <td><img src="imagenes/cuadros/goian.png" style="width: 12%">Atl. Goianiense</td>
+          </tr>
+          <tr>
+            <td><img src="imagenes/logo.png" style="width: 13%">Nacional</td>
+            <td>3</td>
+            <td>:</td>
+            <td>0</td>
+            <td><img src="imagenes/cuadros/rentistas.png" style="width: 12%">Rentistas</td>
           </tr>
         </tbody>
       </table> 
@@ -114,30 +156,15 @@
       <!--   Icon Section   -->
       <div class="row">
         <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
+            <img src="imagenes/LIBERTADORES.jpeg" style="width:270px;">
         </div>
 
         <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
+            <img src="imagenes/C_URUGUAYOS.jpeg" style="width:270px;">
         </div>
 
         <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
+            <img src="imagenes/INTERCONTINENTALES.jpeg" style="width:270px;">
         </div>
       </div>
 
@@ -147,39 +174,27 @@
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
+        
       </div>
     </div>
     <div class="parallax"><img src="imagenes/equipo2.png" alt="Unsplashed background img 2"></div>
-  </div>
-
-  <div class="container">
-    <div class="section">
-
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4><b>Un poco de historia</h4>
-          <p class="left-align light">El Club Nacional de Football es una institución deportiva de Uruguay. Fue fundado el 14 de mayo de 1899 en Montevideo, por iniciativa de jóvenes estudiantes de la época, con la intención de consolidar una institución de fútbol para uruguayos criollos frente al predominio de clubes y practicantes extranjeros europeos de este deporte, particularmente ingleses y alemanes, siendo considerado así el "primer equipo criollo" del país y uno de los primeros clubes fundados por nacionales en América.
-            
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
+    <div class="row">
+    <div class="col s12 m11">
+      <div class="card-panel white z-depth-1">
+      <h4><b>Un poco de historia</h4>
+      <p class="left-align light">El Club Nacional de Football es una institución deportiva de Uruguay. Fue fundado el 14 de mayo de 1899 en Montevideo, por iniciativa de jóvenes estudiantes de la época, con la intención de consolidar una institución de fútbol para uruguayos criollos frente al predominio de clubes y practicantes extranjeros europeos de este deporte, particularmente ingleses y alemanes, siendo considerado así el "primer equipo criollo" del país y uno de los primeros clubes fundados por nacionales en América. </p>
       </div>
     </div>
-    <div class="parallax"><img src="imagenes/nacional3.png" alt="Unsplashed background img 3"></div>
   </div>
-
+  <div class="row">
+    <div class="col s11 m11">
+      <div class="card-panel white z-depth-1">
+      <h4><b>Hablando de titulos</h4>
+      <p class="left-align light">Desde sus orígenes, Nacional ha sido el padre de la gloria del fútbol uruguayo. Con un linaje y una mística ganadora inigualable, Nacional ha conquistado a través de su historia 163 títulos oficiales, que lo definirán en el club más laureado de toda América. Es uno de los equipos mas fuertes del continente con una cantidad de 141 títulos ganados solamente a nivel local y 22 títulos conseguidos a nivel internacional contra grandes equipos de todo el mundo.</p>
+      </div>
+    </div>
+  </div>
+  </div>
 <!--++++++ Footer ++++++-->
 <footer class="page-footer blue darken-6">
           <div class="container">
