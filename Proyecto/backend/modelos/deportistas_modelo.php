@@ -21,7 +21,9 @@
 
 		protected $estado;
 
-		private $totalEnLista = 8;
+		protected $imagen;
+
+		private $totalEnLista = 4;
 
 
 		public function obtenerNombre(){
@@ -40,13 +42,16 @@
 			return $this->tipoGenero;	
 		}
 		public function obtenerPais(){
-			return $this->Pais;	
+			return $this->pais;	
 		}
 		public function obtenerPosicion(){
-			return $this->Posicion;	
+			return $this->posicion;	
 		}
 		public function obtenerNumero(){
-			return $this->Numero;	
+			return $this->numero;	
+		}
+		public function obtenerImagen(){
+			return $this->imagen;	
 		}
 
 // Funcion constructor
@@ -59,6 +64,7 @@
 			$this->pais 				= $data['pais'];
 			$this->posicion 			= $data['posicion'];
 			$this->numero 				= $data['numero'];
+			$this->imagen 				= $data['imagen'];
 		}
 
 // Funcion ingresar
@@ -83,6 +89,7 @@
 						pais = :pais,
 						posicion = :posicion,
 						numero = :numero,
+						imagen 	= :imagen,
 						estado = 1;";
 
 			$arrayDatos = array(
@@ -94,6 +101,7 @@
 				"pais" 					=> $this->pais,
 				"posicion" 				=> $this->posicion,
 				"numero" 				=> $this->numero,
+				"imagen" 				=> $this->imagen,
 
 			);
 
@@ -126,6 +134,7 @@
 				$this->posicion 			= $lista[0]['posicion'];	
 				$this->numero				= $lista[0]['numero'];
 				$this->estado 				= $lista[0]['estado'];	
+				$this->imagen 				= $lista[0]['imagen'];
 			}
 
 		}
@@ -163,46 +172,33 @@
 			}
 
 			$sql = "UPDATE deportistas SET
-						nombre 			= :nombre,
-						apellido		= :apellido,
-						fechaNacimiento = :fechaNacimiento,
-						genero 			= :genero
-						pais 			= :pais
-						posicion 		= :posicion,
-					WHERE numero 		= :numero;";
-			$arrayDatos = array(
-
-				"nombre" 				=> $this->nombre,
-				"apellido" 				=> $this->apellido,
-				"fechaNacimiento" 		=> $this->fechaNacimiento,
-				"genero" 				=> $this->genero,
-				"pais" 					=> $this->pais,
-				"posicion" 				=> $this->posicion,
-				"numero" 				=> $this->numero,
-
+						nombre 		= :nombre,
+						apellido	= :apellido,
+						posicion	= :posicion
+					WHERE numero = :numero;";
+			$arrayDatos = array(				
+				"nombre" 		=> $this->nombre,
+				"apellido" 		=> $this->apellido,
+				"posicion" 		=> $this->posicion,
+				"numero" 		=> $this->numero,
 			);
 			$respuesta = $this->ejecutarConsulta($sql, $arrayDatos);
 
 			if($respuesta){
 				$arrayRespuesta['codigo'] = "OK";
-				$arrayRespuesta['mensaje'] = "Deportista editado correctamente";
+				$arrayRespuesta['mensaje'] = "Se edito el deportista correctamente";
 			}else{
 				$arrayRespuesta['codigo'] = "Error";
-				$arrayRespuesta['mensaje'] = "Error editando deportista";
+				$arrayRespuesta['mensaje'] = "Error al editar deportista";
 			}
 			return $arrayRespuesta;
-
-
 		}
 
 // Funcion listar
 		public function listar($filtros = array()){
 			
 			$sql = "SELECT * FROM deportistas WHERE estado = 1 ";
-
-			// SELECT * FROM deportistas LIMIT 0,3
-			// SELECT * FROM deportistas LIMIT 3,3
-			// SELECT * FROM deportistas LIMIT 6,3
+			
 			if(isset($filtros['buscar']) && $filtros['buscar'] != ""){
 
 				$sql .= " AND (nombre LIKE ('%".$filtros['buscar']."%')

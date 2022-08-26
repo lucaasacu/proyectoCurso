@@ -1,9 +1,9 @@
 <?php
 	require_once("modelos/deportistas_modelo.php");
 	$rutaPagina = "deportistas";
-
-
 	$objDeportistas = new deportistas_modelo();
+
+//Ingresar (Constructor)
 
 	$respuesta = array();
 	if(isset($_POST["accion"]) && $_POST['accion'] == "ingresar" ){
@@ -23,22 +23,23 @@
 
 	}	
 
+//Editar (Constructor)
 	if(isset($_POST["accion"]) && $_POST['accion'] == "editar" ){
 
 		$datos = array();
-		$datos['nombre'] 						= isset($_POST['txtNombre'])?$_POST['txtNombre']:"";		
-		$datos['apellido'] 						= isset($_POST['txtApellido'])?$_POST['txtApellido']:"";
-		$datos['fechaNacimiento']				= isset($_POST['txtFechaNacimiento'])?$_POST['txtFechaNacimiento']:"";
-		$datos['genero'] 						= isset($_POST['txtGenero'])?$_POST['txtGenero']:"";
-		$datos['pais'] 							= isset($_POST['txtPais'])?$_POST['txtPais']:"";
-		$datos['posicion'] 						= isset($_POST['txtPosicion'])?$_POST['txtPosicion']:"";
-		$datos['numero'] 						= isset($_POST['txtNumero'])?$_POST['txtNumero']:"";
+		$datos['numero'] 			= isset($_POST['txtNumero'])?$_POST['txtNumero']:"";		
+		$datos['nombre'] 			= isset($_POST['txtNombre'])?$_POST['txtNombre']:"";
+		$datos['apellido']			= isset($_POST['txtApellido'])?$_POST['txtApellido']:"";
+		$datos['fechaNacimiento'] 	= isset($_POST['txtFechaNacimiento'])?$_POST['txtFechaNacimiento']:"";
+		$datos['posicion'] 			= isset($_POST['txtPosicion'])?$_POST['txtPosicion']:"";
+		$datos['pais'] 				= isset($_POST['txtPais'])?$_POST['txtPais']:"";
+		$datos['genero'] 			= isset($_POST['txtGenero'])?$_POST['txtGenero']:"";
 
 		$objDeportistas->constructor($datos);
 		$respuesta = $objDeportistas->editar();
 
-	}	
-
+	}
+//Borrar (Constructor)
 	if(isset($_POST["accion"]) && $_POST['accion'] == "borrar" && isset($_POST["numero"]) && $_POST['numero'] != ""){
 
 		$numero = $_POST['numero'];
@@ -47,7 +48,7 @@
 
 	}
 
-	
+//Buscador (Constructor)
 	$buscar = isset($_POST['buscador'])?$_POST['buscador']:"";
 	if($buscar == "" && isset($_GET['buscador']) && $_GET['buscador'] != ""){
 		$buscar = $_GET['buscador'];
@@ -93,13 +94,14 @@
     background-color: #003062;
 	}
 </style>
-	  <!-- El modal de ingreso -->
+
+<!-- FORMULARIO DE INGRESO DE DEPORTISTA  -->
 <div id="modal1" class="modal modal-fixed-footer">
 	<div class="modal-content">
 		<h3>Ingresar deportista</h4>
 		<br>
 		<div class="row">
-			<form action="index.php?r=<?=$rutaPagina?>" method="POST" class="col s12">
+			<form action="index.php?r=<?=$rutaPagina?>" enctype="multipart/form-data" method="POST" class="col s12">
 				<div class="row">
 					<div class="input-field col s6">
 					<input placeholder="Nombre" id="nombre" type="text" class="validate" name="txtNombre">
@@ -146,8 +148,15 @@
 						<label for="Numero">Numero</label>
 					</div>
 				</div>
-
-					
+				<div class="file-field input-field">
+					<div class="btn">
+						<span>Imagen</span>
+						<input type="file" name="imagen" multiple>
+					</div>
+					<div class="file-path-wrapper">
+						<input class="file-path validate" type="text" placeholder="Subir un archivo">
+					</div>
+		    	</div>
 				<button class="btn waves-effect waves-light" type="submit" name="accion" value="ingresar">Enviar
 					<i class="material-icons right">send</i>
 				</button>
@@ -172,45 +181,30 @@
 <?PHP
 	}
 ?>
-<?PHP 
+<?php
 	if(isset($respuesta['codigo']) && $respuesta['codigo'] == "OK"  ){
 ?>
 	<div class="green center-align">	
 		<h3><?=$respuesta['mensaje']?></h3>
 	</div>
-<?PHP
+<?php
 	}
 ?>
 
-
-<?PHP 
+<!-- FORMULARIO PARA EDITAR DEPORTISTAS  -->
+<?php
 	if(isset($_GET['accion']) && $_GET['accion'] == "editar" && isset($_GET['deportista']) && $_GET['deportista'] != ""  ){
 		$objDeportistas->cargar($_GET['deportista']);
 
 ?>
 	<div class="grey lighten-3 center-align">	
-		<h3>Editar deportista</h3>
+		<h3>Editar Deportista</h3>
 		<form action="index.php?r=<?=$rutaPagina?>" method="POST" class="container col s10">
 			<div class="row">
-			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<input placeholder="Nombre" id="nombre" type="text" class="validate" name="txtNombre" value="<?=$objDeportistas->obtenerNombre()?>">
-					<label for="nombre">Nombre</label>
-				</div>
-				<div class="input-field col s6">
-					<input placeholder="Apellido" id="apellido" type="text" class="validate" name="txtApellido" value="<?=$objDeportistas->obtenerApellido()?>">
-					<label for="apellido">Apellido</label>
-				</div>
-			</div>
-			<div class="row">
-			<div class="input-field col s6">
-					<input placeholder="Fecha Nacimiento" id="fechaNacimiento" type="date" class="validate" name="txtFechaNacimiento" value="<?=$objDeportistas->obtenerFechaNacimiento()?>">
-					<label for="fechaNacimiento">Fecha Nacimiento</label>
-				</div>
-				<div class="input-field col s6">
-					<input placeholder="Genero" id="genero" type="text" class="validate" name="txtGenero" value="<?=$objDeportistas->obtenerGenero()?>" disabled>
-					<label for="genero">Genero</label>
+				<div class="input-field col s12">
+					<input placeholder="Numero" id="Numero" type="text" class="validate" value="<?=$objDeportistas->obtenerNumero()?>" disabled>
+					<input type="hidden" name="txtNumero" value="<?=$objDeportistas->obtenerNumero()?>">
+					<label for="Numero">Numero</label>
 				</div>
 			</div>
 			<div class="row">
@@ -224,27 +218,35 @@
 				</div>
 			</div>
 			<div class="row">
+				<div class="input-field col s6">
+					<input placeholder="Fecha Nacimiento" id="fechaNacimiento" type="date" class="validate" name="txtFechaNacimiento" value="<?=$objDeportistas->obtenerFechaNacimiento()?>">
+					<label for="fechaNacimiento">Fecha Nacimiento</label>
+				</div>
+				<div class="input-field col s6">
+						<select name="txtGenero">
+							<option value="<?=$objDeportistas->obtenerGenero()?>">Seleccione una opcion</option>
+								<?php foreach($listaGenero as $clave => $valor){
 
-			</div>
-
-				<div class="input-field col s6">
-					<input placeholder="Fecha Nacimiento" id="fechaNacimiento" type="date" class="validate" name="txtFechaNacimiento" value="<?=$objDeportistas->obtenerFechaNacimiento()?>">
-					<label for="fechaNacimiento">Fecha Nacimiento</label>
+								?>
+									<option value="<?=$clave?>"><?=$valor?></option>
+								<?PHP
+									}
+								?>
+						</select>
+						<label for="genero">Genero</label>
+					</div>
 				</div>
-			</div>	
-			<div class="row">
-				<div class="input-field col s6">
-					<input placeholder="Fecha Nacimiento" id="fechaNacimiento" type="date" class="validate" name="txtFechaNacimiento" value="<?=$objDeportistas->obtenerFechaNacimiento()?>">
-					<label for="fechaNacimiento">Fecha Nacimiento</label>
-				</div>
-			</div>	
-			<div class="row">
-				<div class="input-field col s6">
-					<input placeholder="Fecha Nacimiento" id="fechaNacimiento" type="date" class="validate" name="txtFechaNacimiento" value="<?=$objDeportistas->obtenerFechaNacimiento()?>">
-					<label for="fechaNacimiento">Fecha Nacimiento</label>
-				</div>
-			</div>				
-			<button class="btn waves-effect waves-light blue darken-5" type="submit" name="accion" value="editar">Enviar
+				<div class="row">
+					<div class="input-field col s6">
+						<input placeholder="Pais" id="pais" type="text" class="validate" name="txtPais" value="<?=$objDeportistas->obtenerPais()?>">
+						<label for="Pais">Pais</label>
+					</div>
+					<div class="input-field col s6">
+						<input placeholder="Posicion" id="posicion" type="text" class="validate" name="txtPosicion" value="<?=$objDeportistas->obtenerPosicion()?>">
+						<label for="Posicion">Posicion</label>
+					</div>
+				</div>		
+			<button class="btn waves-effect waves-light" type="submit" name="accion" value="editar">Enviar
 				<i class="material-icons right">send</i>
 			</button>
 		</form>
@@ -255,7 +257,7 @@
 ?>
 
 <?PHP 
-	if(isset($_GET['accion']) && $_GET['accion'] == "borrar" && isset($_GET['deportista']) && $_GET['deportista'] != ""  ){
+	if(isset($_GET['accion']) && $_GET['accion'] == "borrar" && isset($_GET['deportista']) && $_GET['deportista'] != ""){
 ?>
 	<div class="grey lighten-3 center-align">	
 		<form action="index.php?r=<?=$rutaPagina?>" method="POST" class="col s12">
@@ -332,10 +334,10 @@
 			<td class="center"><?=$deportista['numero']?></td>
 			<td>
 				<div class="right">
-					<a href="index.php?r=<?=$rutaPagina?>&accion=editar&deportista=<?=$deportista['nombre']?>" class="waves-effect waves-light btn blue darken-4">
+					<a href="index.php?r=<?=$rutaPagina?>&accion=editar&deportista=<?=$deportista['numero']?>" class="waves-effect waves-light btn blue darken-4">
 						<i class="material-icons">edit</i>
 					</a>
-					<a href="index.php?r=<?=$rutaPagina?>&accion=borrar&deportista=<?=$deportista['nombre']?>" class="waves-effect waves-light btn red">
+					<a href="index.php?r=<?=$rutaPagina?>&accion=borrar&deportista=<?=$deportista['numero']?>" class="waves-effect waves-light btn red">
 						<i class="material-icons">delete</i>
 					</a>
 				<div>

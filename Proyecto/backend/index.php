@@ -55,12 +55,12 @@
 				-moz-osx-font-smoothing: grayscale;
 				}
 				a.ex1:hover, a.ex1:active {color: red;}
-		nav .brand-logo.center {
-		left: 50%;
-		bottom: 5%;
-		-webkit-transform: translateX(-50%);
-		transform: translateX(-50%);
-}
+				nav .brand-logo.center {
+				left: 50%;
+				bottom: 5%;
+				-webkit-transform: translateX(-50%);
+				transform: translateX(-50%);
+		}
 		.fa {
 			display: inline-table;
 			font: normal normal normal 14px/1 FontAwesome;
