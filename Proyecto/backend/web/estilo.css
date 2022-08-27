@@ -113,3 +113,49 @@ nav .brand-logo {
     margin: 0 20px;
 
 }
+.row .col.m11 {
+  width: 91.6666666667%;
+  margin-left: auto;
+  left: auto;
+  margin: 30px;
+  right: auto;
+}
+
+        .fa {
+      display: inline-table;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 24px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      }
+      /*Texto rojo cuando pasas el mouse*/
+              a.ex1:hover, a.ex1:active {color: red;}
+              
+      /*Tabla de perfil/cerrar sesion*/
+      .dropdown-content li {
+          color: white;
+          text-align: center;
+      }
+      .dropdown-content li>a, .dropdown-content li>span {
+          color: white;
+      }
+      .dropdown-content li>a>i {
+        height: inherit;
+          line-height: inherit;
+          float: left;
+          margin: 0 0px 0px 20px;
+      }
+
+      .card-panel {
+  border-radius: 14px;
+  border-bottom: 7px solid red;
+    }
+    td{
+      padding: 15px 0px;
+      padding-left: 35px;
+    }
+    .fon{
+      background-color:red;
+    }
+      
