@@ -8,6 +8,10 @@
 	$respuesta = array();
 	if(isset($_POST["accion"]) && $_POST['accion'] == "ingresar" ){
 
+		
+		$archivo = $objDeportistas->subirImagen($_FILES['imagen'], "800","600");
+		if($archivo){
+
 		$datos = array();
 		$datos['nombre'] 						= isset($_POST['txtNombre'])?$_POST['txtNombre']:"";		
 		$datos['apellido'] 						= isset($_POST['txtApellido'])?$_POST['txtApellido']:"";
@@ -16,15 +20,22 @@
 		$datos['pais'] 							= isset($_POST['txtPais'])?$_POST['txtPais']:"";
 		$datos['posicion'] 						= isset($_POST['txtPosicion'])?$_POST['txtPosicion']:"";
 		$datos['numero'] 						= isset($_POST['txtNumero'])?$_POST['txtNumero']:"";
+		$datos['imagen'] 						= $archivo;
 
 		$objDeportistas->constructor($datos);
 		$respuesta = $objDeportistas->ingresar();
 
-
+	}else{
+		$respuesta = array();
+		$respuesta['codigo'] = "Error";
+		$respuesta['mensaje'] = "Error al subir la imagen";
+		}
 	}	
 
 //Editar (Constructor)
 	if(isset($_POST["accion"]) && $_POST['accion'] == "editar" ){
+		
+		print_r($_FILES);
 
 		$datos = array();
 		$datos['numero'] 			= isset($_POST['txtNumero'])?$_POST['txtNumero']:"";		
@@ -35,10 +46,23 @@
 		$datos['pais'] 				= isset($_POST['txtPais'])?$_POST['txtPais']:"";
 		$datos['genero'] 			= isset($_POST['txtGenero'])?$_POST['txtGenero']:"";
 
+
+
+		$archivo = $objDeportistas->subirImagen($_FILES['imagen'], "800","600");
+		if($archivo){
+			
+			$datos['imagen'] 	= $archivo;
+			
+		}else{
+
+			$datos['imagen'] 	= "";
+
+		}
 		$objDeportistas->constructor($datos);
 		$respuesta = $objDeportistas->editar();
 
 	}
+
 //Borrar (Constructor)
 	if(isset($_POST["accion"]) && $_POST['accion'] == "borrar" && isset($_POST["numero"]) && $_POST['numero'] != ""){
 
@@ -199,7 +223,7 @@
 ?>
 	<div class="grey lighten-3 center-align">	
 		<h3>Editar Deportista</h3>
-		<form action="index.php?r=<?=$rutaPagina?>" method="POST" class="container col s10">
+		<form action="index.php?r=<?=$rutaPagina?>" enctype="multipart/form-data" method="POST" class="container col s10">
 			<div class="row">
 				<div class="input-field col s12">
 					<input placeholder="Numero" id="Numero" type="text" class="validate" value="<?=$objDeportistas->obtenerNumero()?>" disabled>
@@ -245,7 +269,17 @@
 						<input placeholder="Posicion" id="posicion" type="text" class="validate" name="txtPosicion" value="<?=$objDeportistas->obtenerPosicion()?>">
 						<label for="Posicion">Posicion</label>
 					</div>
-				</div>		
+				</div>	
+				<div class="file-field input-field">
+					<div class="btn">
+						<span>Imagen</span>
+						<input type="file" name="imagen" multiple>
+					</div>
+					<div class="file-path-wrapper">
+						<input class="file-path validate" type="text" placeholder="Ingrese un archivo">
+					</div>
+			    </div>	
+			</div>		
 			<button class="btn waves-effect waves-light" type="submit" name="accion" value="editar">Enviar
 				<i class="material-icons right">send</i>
 			</button>
@@ -332,6 +366,7 @@
 			<td class="center"><?=$deportista['pais']?></td>
 			<td class="center"><?=$deportista['posicion']?></td>
 			<td class="center"><?=$deportista['numero']?></td>
+			<img src="../imagenes/jugadores/<?=$deportista['imagen']?>" style="width:200px">
 			<td>
 				<div class="right">
 					<a href="index.php?r=<?=$rutaPagina?>&accion=editar&deportista=<?=$deportista['numero']?>" class="waves-effect waves-light btn blue darken-4">

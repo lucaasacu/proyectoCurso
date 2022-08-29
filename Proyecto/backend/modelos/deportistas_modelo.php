@@ -53,7 +53,6 @@
 		public function obtenerImagen(){
 			return $this->imagen;	
 		}
-
 // Funcion constructor
 		public function constructor($data = array()){
 
