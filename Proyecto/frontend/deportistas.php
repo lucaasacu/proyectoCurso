@@ -89,17 +89,16 @@
 </style>
 </head>
 <body>
- <!--++++++ Nav bar ++++++-->
- <main>
-          <nav>
+  <!--++++++ Nav bar ++++++-->
+  <nav>
               <div class="nav-wrapper blue darken-5">
                   <a href="index.php" class="brand-logo center"><b>Club Nacional de Football</b></a>
                   <a href="index.php"><img src="imagenes/logo.png"></a>
                       <ul class="right hide-on-med-and-down">
-                          <li><a href="" class="tooltipped" data-position="bottom" data-tooltip="Inicioaaaa"><i class="material-icons">home</i></a></li>
-                          <li><a href="" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a></li>
-                          <li><a href="" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
-                          <li><a href=""class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
+                      <li><a href="index.php" class="tooltipped" data-position="bottom" data-tooltip="Inicio"><i class="material-icons">home</i></a></li>
+                          <li><a href="noticias.php" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a></li>
+                          <li><a href="deportistas.php" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
+                          <li><a href="contacto.php" class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
                          <!--Menu para cerrar sesion -->
                             <li>
                               <a class='dropdown-trigger' href='#' data-target='dropdown1'>
@@ -124,7 +123,6 @@
               </div>
           </nav>
       <div class="container blue darken-5"></div>
-  </main>
   <h1 class="center">Plantel 2022</h1>
 <!--GOLEROS-->
   <h2 class="red center">GOLEROS</h2>
@@ -431,9 +429,7 @@
       </div>
   </div>
   </div>
-
-  
-<!--++++++ Footer ++++++-->
+  <!--Footer-->
 <footer class="page-footer blue darken-6">
           <div class="container">
             <div class="row">
@@ -462,9 +458,7 @@
           </div>
 </footer>
 
-
-  <!--  Scripts-->
-  <!--JavaScript at end of body for optimized loading-->
+  <!--Scripts-->
   <script type="text/javascript" src="../backend/web/js/materialize.min.js"></script>
       <script>
           document.addEventListener('DOMContentLoaded', function() {

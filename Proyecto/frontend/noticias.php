@@ -1,4 +1,3 @@
-
 <?php
 
 ?>
@@ -17,7 +16,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>NACIONAL</title>
+      <title>NOTICIAS</title>
       <link rel="icon" href="imagenes/logo.png">
           <style>
     .row .col.m11 {
@@ -64,15 +63,23 @@
       .fon{
         background-color:red;
       }
-      .crema{
-        background-color:#f2f2f2;
-      }
+      .card-image {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  width:auto;
+}
+.card .card-image img {
+margin: 0 0;
+}
+
+
         
-          </style>
+</style>
 </head>
 <body>
- <!--++++++ Nav bar ++++++-->
-          <nav>
+  <!--++++++ Nav bar ++++++-->
+  <nav>
               <div class="nav-wrapper blue darken-5">
                   <a href="index.php" class="brand-logo center"><b>Club Nacional de Football</b></a>
                   <a href="index.php"><img src="imagenes/logo.png"></a>
@@ -80,7 +87,7 @@
                           <li><a href="index.php" class="tooltipped" data-position="bottom" data-tooltip="Inicio"><i class="material-icons">home</i></a></li>
                           <li><a href="noticias.php" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a></li>
                           <li><a href="deportistas.php" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
-                          <li><a href="contacto.php" class="tooltiped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
+                          <li><a href="contacto.php" class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
                          <!--Menu para cerrar sesion -->
                             <li>
                               <a class='dropdown-trigger' href='#' data-target='dropdown1'>
@@ -104,103 +111,114 @@
                       </ul>
               </div>
           </nav>
-				
-          <main>
       <div class="container blue darken-5"></div>
+<!--NOTICIAS-->
+  <h1 class="center"><b>Noticias locales</b></h1>
+  <br><br>
 
-<!--++++++ Parallax ++++++-->
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <br><br>
 
+<main>
+<div class="row">
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator"src="imagenes/campeon.jpg">
+        </div>
+        <div class="card-content">
+         <span class="card-title activator grey-text text-darken-4">Noticias<i class="material-icons right">arrow_upward</i></span>
+          <p><a href="#">Fecha</a></p>
+        </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Noticia<i class="material-icons right">close</i></span>
+        <p>Informacion de la noticia</p>
       </div>
+        </div>
     </div>
-    <div class="parallax"><img src="imagenes/nacional2.png" alt="Unsplashed background img 1"></div>
-    <div class="container white" style="width: 50%">
-    <table class="stripped">
-        <tbody>
-          <tr>
-            <td><img src="imagenes/logo.png" style="width: 13%">Nacional</td>
-            <td>2</td>
-            <td>:</td>
-            <td>0</td>
-            <td><img src="imagenes/cuadros/wanderers.png" style="width: 12%">Wanderers</td>
-          </tr>
-          <tr>
-            <td><img src="imagenes/logo.png" style="width: 13%">Nacional</td>
-            <td>1</td>
-            <td>:</td>
-            <td>0</td>
-            <td><img src="imagenes/cuadros/liverpool.png" style="width: 12%">Liverpool</td>
-          </tr>
-          <tr>
-            <td><img src="imagenes/logo.png" style="width: 13%">Nacional</td>
-            <td>0</td>
-            <td>:</td>
-            <td>3</td>
-            <td><img src="imagenes/cuadros/goian.png" style="width: 12%">Atl. Goianiense</td>
-          </tr>
-          <tr>
-            <td><img src="imagenes/logo.png" style="width: 13%">Nacional</td>
-            <td>3</td>
-            <td>:</td>
-            <td>0</td>
-            <td><img src="imagenes/cuadros/rentistas.png" style="width: 12%">Rentistas</td>
-          </tr>
-        </tbody>
-      </table> 
-      </div>    
-  </div>    
-  <div class="container">
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator"src="imagenes/campeon.jpg">
+        </div>
+        <div class="card-content">
+         <span class="card-title activator grey-text text-darken-4">Noticias<i class="material-icons right">arrow_upward</i></span>
+          <p><a href="#">Fecha</a></p>
+        </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Noticia<i class="material-icons right">close</i></span>
+        <p>Informacion de la noticia</p>
+      </div>
+        </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator"src="imagenes/campeon.jpg">
+        </div>
+        <div class="card-content">
+         <span class="card-title activator grey-text text-darken-4">Noticias<i class="material-icons right">arrow_upward</i></span>
+          <p><a href="#">Fecha</a></p>
+        </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Noticia<i class="material-icons right">close</i></span>
+        <p>Informacion de la noticia</p>
+      </div>
+        </div>
+    </div>
     
-    <div class="section">
-
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-            <img src="imagenes/LIBERTADORES.png" style="width:270px;">
-        </div>
-
-        <div class="col s12 m4">
-            <img src="imagenes/C_URUGUAYOS.png" style="width:270px;">
-        </div>
-
-        <div class="col s12 m4">
-            <img src="imagenes/INTERCONTINENTALES.png" style="width:270px;">
-        </div>
-      </div>
-
-    </div>
   </div>
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        
-      </div>
-    </div>
-    <div class="parallax"><img src="imagenes/equipo2.png" alt="Unsplashed background img 2"></div>
-    <div class="row">
-    <div class="col s12 m11">
-      <div class="card-panel white z-depth-1">
-      <h4><b>Un poco de historia</h4>
-      <p class="left-align light">El Club Nacional de Football es una institución deportiva de Uruguay. Fue fundado el 14 de mayo de 1899 en Montevideo, por iniciativa de jóvenes estudiantes de la época, con la intención de consolidar una institución de fútbol para uruguayos criollos frente al predominio de clubes y practicantes extranjeros europeos de este deporte, particularmente ingleses y alemanes, siendo considerado así el "primer equipo criollo" del país y uno de los primeros clubes fundados por nacionales en América. </p>
-      </div>
-    </div>
-  </div>
+  <br><br>
+  <h1 class="center"><b>Noticias internacionales</b></h1>
+  <br><br>
+</div>
+  
   <div class="row">
-    <div class="col s11 m11">
-      <div class="card-panel white z-depth-1">
-      <h4><b>Hablando de titulos</h4>
-      <p class="left-align light">Desde sus orígenes, Nacional ha sido el padre de la gloria del fútbol uruguayo. Con un linaje y una mística ganadora inigualable, Nacional ha conquistado a través de su historia 163 títulos oficiales, que lo definirán en el club más laureado de toda América. Es uno de los equipos mas fuertes del continente con una cantidad de 141 títulos ganados solamente a nivel local y 22 títulos conseguidos a nivel internacional contra grandes equipos de todo el mundo.</p>
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator"src="imagenes/campeon.jpg">
+        </div>
+        <div class="card-content">
+         <span class="card-title activator grey-text text-darken-4">Noticias<i class="material-icons right">arrow_upward</i></span>
+          <p><a href="#">Fecha</a></p>
+        </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Noticia<i class="material-icons right">close</i></span>
+        <p>Informacion de la noticia</p>
       </div>
+        </div>
     </div>
-  </div>
-  </div>
-  </main>
-
-<!--Footer-->
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator"src="imagenes/campeon.jpg">
+        </div>
+        <div class="card-content">
+         <span class="card-title activator grey-text text-darken-4">Noticias<i class="material-icons right">arrow_upward</i></span>
+          <p><a href="#">Fecha</a></p>
+        </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Noticia<i class="material-icons right">close</i></span>
+        <p>Informacion de la noticia</p>
+      </div>
+        </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator"src="imagenes/campeon.jpg">
+        </div>
+        <div class="card-content">
+         <span class="card-title activator grey-text text-darken-4">Noticias<i class="material-icons right">arrow_upward</i></span>
+          <p><a href="#">Fecha</a></p>
+        </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Noticia<i class="material-icons right">close</i></span>
+        <p>Informacion de la noticia</p>
+      </div>
+        </div>
+    </div>
+</main>
+  <!--Footer-->
 <footer class="page-footer blue darken-6">
           <div class="container">
             <div class="row">
@@ -228,7 +246,6 @@
             </div>
           </div>
 </footer>
-
   <!--Scripts-->
   <script type="text/javascript" src="../backend/web/js/materialize.min.js"></script>
       <script>
@@ -244,6 +261,5 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-
   </body>
 </html>
