@@ -128,30 +128,42 @@
       <div class="container blue darken-5"></div>
   <h1 class="center">Plantel 2022</h1>
 
-  <?php
+
+
+  <h2 class="red center white-text">GOLEROS</h2>
+  <div class="row">
+
+<?php
 
 			foreach($listaDeportistas as $deportistas){;
 ?>
 
 
 <!--GOLEROS-->
-  <h2 class="red center">GOLEROS</h2>
-  <div class="row">
     <div class="col s4 m3">
-      <div class="card">
-        <div class="card-image" style="background-image: url('http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$deportistas['imagen']?>');">
+      <div class="card"> 
+        <div class="card-image activator" style="background-image: url('http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$deportistas['imagen']?>');">
           <span class="card-title red"><?=$deportistas['numero']?></span>
         </div>
         <div class="card-content">
           <p><b> <?=$deportistas['nombre']?> <?=$deportistas['apellido']?>  </b></p>
         </div>
+        <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+      <ul>
+        <li><p>Fecha de nacimiento: <br> <?=$deportistas['fechaNacimiento']?></p></li>
+        <li><p>Genero: <?=$deportistas['genero']?></p></li>
+      </ul>
+
+    </div>
       </div>
   </div>
-  </div>
-  <?php
+<?php
 
       }
 ?>
+			</div>
+<main></main>
   <!--Footer-->
 <footer class="page-footer blue darken-6">
           <div class="container">

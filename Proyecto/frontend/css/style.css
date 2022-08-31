@@ -39,12 +39,7 @@ p {
   }
 }
 
-nav ul li {
-  -webkit-transition: background-color .3s;
-  transition: background-color .3s;
-  float: left;
-  padding: 0 5px;
-}
+
 
 @media only screen and (max-width : 600px) {
   #index-banner .section {

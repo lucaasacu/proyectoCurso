@@ -1,7 +1,7 @@
 <?php
-	require_once("modelos/deportistas_modelo.php");
-	$rutaPagina = "deportistas";
-	$objDeportistas = new deportistas_modelo();
+	require_once("modelos/noticias_modelo.php");
+	$rutaPagina = "noticias";
+	$objNoticias = new noticias_modelo();
 
 //Ingresar (Constructor)
 
@@ -9,21 +9,18 @@
 	if(isset($_POST["accion"]) && $_POST['accion'] == "ingresar" ){
 
 		
-		$archivo = $objDeportistas->subirImagen($_FILES['imagen'], "800","600");
+		$archivo = $objNoticias->subirImagen($_FILES['imagen'], "800","600");
 		if($archivo){
 
 		$datos = array();
-		$datos['nombre'] 						= isset($_POST['txtNombre'])?$_POST['txtNombre']:"";		
-		$datos['apellido'] 						= isset($_POST['txtApellido'])?$_POST['txtApellido']:"";
-		$datos['fechaNacimiento']				= isset($_POST['txtFechaNacimiento'])?$_POST['txtFechaNacimiento']:"";
-		$datos['genero'] 						= isset($_POST['txtGenero'])?$_POST['txtGenero']:"";
-		$datos['pais'] 							= isset($_POST['txtPais'])?$_POST['txtPais']:"";
-		$datos['posicion'] 						= isset($_POST['txtPosicion'])?$_POST['txtPosicion']:"";
-		$datos['numero'] 						= isset($_POST['txtNumero'])?$_POST['txtNumero']:"";
+		$datos['id'] 							= isset($_POST['txtId'])?$_POST['txtId']:"";		
+		$datos['titulo'] 						= isset($_POST['txtTitulo'])?$_POST['txtTitulo']:"";
+		$datos['categoria']						= isset($_POST['txtCategoria'])?$_POST['txtCategoria']:"";
+		$datos['noticia'] 						= isset($_POST['txtNoticia'])?$_POST['txtNoticia']:"";
 		$datos['imagen'] 						= $archivo;
 
-		$objDeportistas->constructor($datos);
-		$respuesta = $objDeportistas->ingresar();
+		$objNoticias->constructor($datos);
+		$respuesta = $objNoticias->ingresar();
 
 	}else{
 		$respuesta = array();
