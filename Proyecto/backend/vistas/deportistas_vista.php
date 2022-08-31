@@ -117,6 +117,9 @@
 	.dropdown-content {
     background-color: #003062;
 	}
+	.div-padre{
+   background-color: transparent;
+}
 </style>
 
 <!-- FORMULARIO DE INGRESO DE DEPORTISTA  -->
@@ -193,7 +196,7 @@
 </div>
 
 
-<!-- Page Content goes here -->		
+<!-- Funcionamiento -->		
 
 
 <?PHP 
@@ -289,7 +292,7 @@
 <?php
 	}
 ?>
-
+<!-- BORRAR -->
 <?PHP 
 	if(isset($_GET['accion']) && $_GET['accion'] == "borrar" && isset($_GET['deportista']) && $_GET['deportista'] != ""){
 ?>
@@ -309,7 +312,7 @@
 <?php
 	}
 ?>
-
+<!-- LISTAR -->
 <table class="striped">
 	<thead>
 
@@ -350,6 +353,7 @@
 			<th class="center">Pais</th>
 			<th class="center">Posicion</th>
 			<th class="center">Numero</th>
+			<th class="center">Imagen</th>
 			<th class="center" style="width:200px">Botones</th>
 		</tr>
 	</thead>
@@ -366,10 +370,12 @@
 			<td class="center"><?=$deportista['pais']?></td>
 			<td class="center"><?=$deportista['posicion']?></td>
 			<td class="center"><?=$deportista['numero']?></td>
-			<img src="../imagenes/jugadores/<?=$deportista['imagen']?>" style="width:200px">
+			<td class="center div-padre">
+				<img src="archivos/imagenes/<?=$deportista['imagen']?>" style="width:130px;height:130px;">
+			</td>
 			<td>
 				<div class="right">
-					<a href="index.php?r=<?=$rutaPagina?>&accion=editar&deportista=<?=$deportista['numero']?>" class="waves-effect waves-light btn blue darken-4">
+					<a href="index.php?r=<?=$rutaPagina?>&accion=editar&deportista=<?=$deportista['numero']?>" class="waves-effect waves-light btn blue darken-5">
 						<i class="material-icons">edit</i>
 					</a>
 					<a href="index.php?r=<?=$rutaPagina?>&accion=borrar&deportista=<?=$deportista['numero']?>" class="waves-effect waves-light btn red">
@@ -381,7 +387,7 @@
 <?php
 	}
 ?>
-
+<!-- BUSCAR -->
 		<tr class="blue darken-4">
 			<td colspan="8">
 				<ul class="pagination center">

@@ -80,7 +80,7 @@
                           <li><a href="index.php" class="tooltipped" data-position="bottom" data-tooltip="Inicio"><i class="material-icons">home</i></a></li>
                           <li><a href="noticias.php" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a></li>
                           <li><a href="deportistas.php" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
-                          <li><a href="contacto.php" class="tooltiped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
+                          <li><a href="contacto.php" class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
                          <!--Menu para cerrar sesion -->
                             <li>
                               <a class='dropdown-trigger' href='#' data-target='dropdown1'>
@@ -199,7 +199,6 @@
   </div>
   </div>
   </main>
-
 <!--Footer-->
 <footer class="page-footer blue darken-6">
           <div class="container">
