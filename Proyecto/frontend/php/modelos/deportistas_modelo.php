@@ -66,56 +66,7 @@
 			$this->imagen 				= $data['imagen'];
 		}
 
-// Funcion ingresar
-		public function ingresar(){
 
-			$arrayRespuesta = array("codigo"=>"", "mensaje"=>"");
-			$sqlDuplicado = "SELECT count(*) AS total FROM deportistas WHERE numero = :numero";
-			$arrayDuplicado = array("numero" => $this->numero);
-			$lista = $this->traerListado($sqlDuplicado, $arrayDuplicado);
-			$totalRegistros = $lista[0]['total'];
-			
-			if($totalRegistros > 0){
-				$arrayRespuesta['codigo'] = "Error";
-				$arrayRespuesta['mensaje'] = "Error el numero ya se encuentra registrado";
-				return $arrayRespuesta;
-			}
-			$sql = "INSERT INTO deportistas SET
-						nombre 		= :nombre,
-						apellido 	= :apellido,
-						fechaNacimiento = :fechaNacimiento,
-						genero = :genero,
-						pais = :pais,
-						posicion = :posicion,
-						numero = :numero,
-						imagen 	= :imagen,
-						estado = 1;";
-
-			$arrayDatos = array(
-
-				"nombre" 				=> $this->nombre,
-				"apellido" 				=> $this->apellido,
-				"fechaNacimiento" 		=> $this->fechaNacimiento,
-				"genero" 				=> $this->genero,
-				"pais" 					=> $this->pais,
-				"posicion" 				=> $this->posicion,
-				"numero" 				=> $this->numero,
-				"imagen" 				=> $this->imagen,
-
-			);
-
-			$respuesta = $this->ejecutarConsulta($sql, $arrayDatos);
-
-			
-			if($respuesta){
-				$arrayRespuesta['codigo'] = "OK";
-				$arrayRespuesta['mensaje'] = "El deportista fue ingresado";
-			}else{
-				$arrayRespuesta['codigo'] = "Error";
-				$arrayRespuesta['mensaje'] = "Error al ingresar deportista";
-			}
-			return $arrayRespuesta;
-		}
 // Funcion cargar
 		public function cargar($numero){
 			
@@ -137,64 +88,6 @@
 			}
 
 		}
-
-// Funcion borrar
-		public function borrar(){
-			
-			$sql = "UPDATE deportistas SET estado = 0 WHERE numero = :numero";
-			$arrayDatos = array("numero" => $this->numero);
-			$respuesta = $this->ejecutarConsulta($sql, $arrayDatos);
-			
-			if($respuesta){
-				$arrayRespuesta['codigo'] = "OK";
-				$arrayRespuesta['mensaje'] = "Deportista eliminado correctamente";
-			}else{
-				$arrayRespuesta['codigo'] = "Error";
-				$arrayRespuesta['mensaje'] = "Error al eliminar deportista";
-			}
-			return $arrayRespuesta;
-
-		}
-// Funcion editar
-		public function editar(){
-
-			$arrayRespuesta = array("codigo"=>"", "mensaje"=>"");
-			$sqlDuplicado = "SELECT count(*) AS total FROM deportistas WHERE numero = :numero";
-			$arrayDuplicado = array("numero" => $this->numero);
-			$lista = $this->traerListado($sqlDuplicado, $arrayDuplicado);
-			$totalRegistros = $lista[0]['total'];
-			
-			if($totalRegistros == 0){
-				$arrayRespuesta['codigo'] = "Error";
-				$arrayRespuesta['mensaje'] = "Error el numero no se encuentra registrado";
-				return $arrayRespuesta;
-			}
-
-			$sql = "UPDATE deportistas SET
-						nombre 		= :nombre,
-						apellido	= :apellido,
-						posicion	= :posicion,
-						imagen 		= :imagen
-					WHERE numero = :numero;";
-			$arrayDatos = array(				
-				"nombre" 		=> $this->nombre,
-				"apellido" 		=> $this->apellido,
-				"posicion" 		=> $this->posicion,
-				"numero" 		=> $this->numero,
-				"imagen" 		=> $this->imagen,
-			);
-			$respuesta = $this->ejecutarConsulta($sql, $arrayDatos);
-
-			if($respuesta){
-				$arrayRespuesta['codigo'] = "OK";
-				$arrayRespuesta['mensaje'] = "Se edito el deportista correctamente";
-			}else{
-				$arrayRespuesta['codigo'] = "Error";
-				$arrayRespuesta['mensaje'] = "Error al editar deportista";
-			}
-			return $arrayRespuesta;
-		}
-
 // Funcion listar
 		public function listar($filtros = array()){
 			
