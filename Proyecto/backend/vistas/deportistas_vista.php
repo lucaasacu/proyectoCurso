@@ -125,7 +125,7 @@
 <!-- FORMULARIO DE INGRESO DE DEPORTISTA  -->
 <div id="modal1" class="modal modal-fixed-footer">
 	<div class="modal-content">
-		<h3>Ingresar deportista</h4>
+		<h3>Ingresar deportista</h3>
 		<br>
 		<div class="row">
 			<form action="index.php?r=<?=$rutaPagina?>" enctype="multipart/form-data" method="POST" class="col s12">

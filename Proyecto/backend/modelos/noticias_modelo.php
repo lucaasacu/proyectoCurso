@@ -14,6 +14,8 @@
 		protected $noticia;
 	
 		protected $estado;
+		
+		protected $imagen;
 
 		private $totalEnLista = 4;
 
@@ -30,6 +32,9 @@
 		public function obtenerNoticia(){
 			return $this->noticia;	
 		}
+		public function obtenerImagen(){
+			return $this->imagen;	
+		}
 
 // Funcion constructor
 		public function constructor($data = array()){
@@ -38,6 +43,7 @@
 			$this->categoria			= $data['categoria'];
 			$this->titulo 				= $data['titulo'];
 			$this->noticia				= $data['noticia'];
+			$this->imagen 				= $data['imagen'];
 		}
 
 // Funcion ingresar
@@ -55,18 +61,19 @@
 				return $arrayRespuesta;
 			}
 			$sql = "INSERT INTO noticias SET
-						id 			= :id,
+
 						categoria 	= :categoria,
 						titulo		= :titulo,
 						noticia 	= :noticia,
+						imagen 	= :imagen,
 						estado = 1;";
 
 			$arrayDatos = array(
 
-				"id" 					=> $this->id,
 				"categoria" 			=> $this->categoria,
 				"titulo" 				=> $this->titulo,
 				"noticia" 				=> $this->noticia,
+				"imagen" 				=> $this->imagen,
 			);
 
 			$respuesta = $this->ejecutarConsulta($sql, $arrayDatos);
@@ -94,7 +101,8 @@
 				$this->categoria			= $lista[0]['categoria'];
 				$this->titulo 				= $lista[0]['titulo'];
 				$this->noticia 				= $lista[0]['noticia'];
-				$this->estado 				= $lista[0]['estado'];	
+				$this->estado 				= $lista[0]['estado'];
+				$this->imagen 				= $lista[0]['imagen'];	
 
 			}
 
@@ -135,13 +143,15 @@
 			$sql = "UPDATE noticias SET
 						categoria 		= :categoria,
 						titulo			= :titulo,
-						noticia			= :noticia
+						noticia			= :noticia,
+						imagen 			= :imagen
 					WHERE id = :id;";
 			$arrayDatos = array(
 				"id" 					=> $this->id,
 				"categoria" 			=> $this->categoria,
 				"titulo" 				=> $this->titulo,
 				"noticia" 				=> $this->noticia,
+				"imagen" 				=> $this->imagen,
 			);
 			$respuesta = $this->ejecutarConsulta($sql, $arrayDatos);
 
@@ -162,9 +172,9 @@
 			
 			if(isset($filtros['buscar']) && $filtros['buscar'] != ""){
 
-				$sql .= " AND (nombre LIKE ('%".$filtros['buscar']."%')
-							OR apellido LIKE ('%".$filtros['buscar']."%')
-							OR numero LIKE ('%".$filtros['buscar']."%')
+				$sql .= " AND (titulo LIKE ('%".$filtros['buscar']."%')
+							OR categoria LIKE ('%".$filtros['buscar']."%')
+							OR id LIKE ('%".$filtros['buscar']."%')
 						)
 					";
 			}
@@ -200,21 +210,17 @@
 
 		}
 
-/* LISTA PARA CATEGORIAS
+		public function listaCategorias(){
 
-		public function listaTipoGenero(){
-
-			$arrayGenero = array();
-			$arrayGenero['Masculino'] = "Masculino";
-			$arrayGenero['Femenino'] = "Femenino";
-			$arrayGenero['Otros'] = "Otros";
-			return $arrayGenero;
+			$arrayCategoria = array();
+			$arrayCategoria['Resultados'] 		= "Resultados";
+			$arrayCategoria['Jugadores'] 		= "Jugadores";
+			$arrayCategoria['Internacional'] 	= "Internacional";
+			$arrayCategoria['Mercado'] 			= "Mercado";
+			$arrayCategoria['Sociales'] 		= "Sociales";
+			return $arrayCategoria;
 	
 		}
-
-	}
-
-*/
 
 
 

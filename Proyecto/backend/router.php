@@ -8,8 +8,8 @@
 
 			if($ruta == "deportistas"){
 				include("vistas/deportistas_vista.php");
-			}elseif($ruta == "profesores"){
-				include("vistas/profesores_vista.php");
+			}elseif($ruta == "noticias"){
+				include("vistas/noticias_vista.php");
 			}elseif($ruta == "alumnos"){
 				include("vistas/alumnos_vista.php");
 			}elseif($ruta == "tcursos"){

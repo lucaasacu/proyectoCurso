@@ -62,7 +62,7 @@
 	if(isset($_POST["accion"]) && $_POST['accion'] == "borrar" && isset($_POST["id"]) && $_POST['id'] != ""){
 
 		$id = $_POST['id'];
-		$objNoticias->cargar($numero);
+		$objNoticias->cargar($id);
 		$respuesta = $objNoticias->borrar();
 
 	}
@@ -104,12 +104,12 @@
 
 	$arrayFiltros['pagina'] = $pagina - 1;
 	$listaNoticias = $objNoticias->listar($arrayFiltros);
-
-	/* $listaGenero = $objNoticias->listaTipoGenero();*/
+	$listaCategoria = $objNoticias->listaCategorias();
+	
 
 
 ?>
-<h1>Deportistas</h1>
+<h1>Noticias</h1>
 <style>
 	.dropdown-content {
     background-color: #003062;
@@ -119,33 +119,22 @@
 }
 </style>
 
-<!-- FORMULARIO DE INGRESO DE DEPORTISTA  -->
+<!-- FORMULARIO DE INGRESO DE NOTICIAS  -->
 <div id="modal1" class="modal modal-fixed-footer">
 	<div class="modal-content">
-		<h3>Ingresar deportista</h4>
+		<h3>Ingresar noticia</h3>
 		<br>
 		<div class="row">
 			<form action="index.php?r=<?=$rutaPagina?>" enctype="multipart/form-data" method="POST" class="col s12">
 				<div class="row">
 					<div class="input-field col s6">
-					<input placeholder="Nombre" id="nombre" type="text" class="validate" name="txtNombre">
-						<label for="nombre">Nombre</label>
+					<input placeholder="Titulo" id="titulo" type="text" class="validate" name="txtTitulo">
+						<label for="titulo">Titulo de la noticia</label>
 					</div>
 					<div class="input-field col s6">
-						<input placeholder="Apellido" id="apellido" type="text" class="validate" name="txtApellido">
-						<label for="apellido">Apellido</label>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="input-field col s6">
-						<input placeholder="Fecha Nacimiento" id="Fecha Nacimiento" type="date" class="validate" name="txtFechaNacimiento">
-						<label for="Fecha Nacimiento">Fecha Nacimiento</label>
-					</div>
-				<div class="input-field col s6">
-						<select name="txtGenero">
+						<select name="txtCategoria">
 							<option value="">Seleccione una opcion</option>
-								<?php foreach($listaGenero as $clave => $valor){
+								<?php foreach($listaCategoria as $clave => $valor){
 
 								?>
 									<option value="<?=$clave?>"><?=$valor?></option>
@@ -153,23 +142,14 @@
 									}
 								?>
 						</select>
-						<label for="genero">Genero</label>
+						<label for="genero">Categoria</label>
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="input-field col s6">
-						<input placeholder="Pais" id="pais" type="text" class="validate" name="txtPais">
-						<label for="Pais">Pais</label>
-					</div>
-					<div class="input-field col s6">
-						<input placeholder="Posicion" id="posicion" type="text" class="validate" name="txtPosicion">
-						<label for="Posicion">Posicion</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s6">
-						<input placeholder="Numero" id="numero" type="text" class="validate" name="txtNumero">
-						<label for="Numero">Numero</label>
+						<input placeholder="Noticia" id="Noticia" type="text" class="validate" name="txtNoticia">
+						<label for="Noticia">Noticia</label>
 					</div>
 				</div>
 				<div class="file-field input-field">
@@ -196,13 +176,13 @@
 <!-- Funcionamiento -->		
 
 
-<?PHP 
+<?php
 	if(isset($respuesta['codigo']) && $respuesta['codigo'] == "Error"  ){
 ?>
 	<div class="red center-align">	
 		<h3><?=$respuesta['mensaje']?></h3>
 	</div>
-<?PHP
+<?php
 	}
 ?>
 <?php
@@ -215,41 +195,26 @@
 	}
 ?>
 
-<!-- FORMULARIO PARA EDITAR DEPORTISTAS  -->
+<!-- FORMULARIO PARA EDITAR NOTICIAS  -->
 <?php
-	if(isset($_GET['accion']) && $_GET['accion'] == "editar" && isset($_GET['deportista']) && $_GET['deportista'] != ""  ){
-		$objDeportistas->cargar($_GET['deportista']);
+	if(isset($_GET['accion']) && $_GET['accion'] == "editar" && isset($_GET['noticia']) && $_GET['noticia'] != ""  ){
+		$objNoticias->cargar($_GET['noticia']);
 
 ?>
 	<div class="grey lighten-3 center-align">	
-		<h3>Editar Deportista</h3>
+		<h3>Editar Noticias</h3>
 		<form action="index.php?r=<?=$rutaPagina?>" enctype="multipart/form-data" method="POST" class="container col s10">
 			<div class="row">
-				<div class="input-field col s12">
-					<input placeholder="Numero" id="Numero" type="text" class="validate" value="<?=$objDeportistas->obtenerNumero()?>" disabled>
-					<input type="hidden" name="txtNumero" value="<?=$objDeportistas->obtenerNumero()?>">
-					<label for="Numero">Numero</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<input placeholder="Nombre" id="nombre" type="text" class="validate" name="txtNombre" value="<?=$objDeportistas->obtenerNombre()?>">
-					<label for="nombre">Nombre</label>
-				</div>
-				<div class="input-field col s6">
-					<input placeholder="Apellido" id="apellido" type="text" class="validate" name="txtApellido" value="<?=$objDeportistas->obtenerApellido()?>">
-					<label for="apellido">Apellido</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<input placeholder="Fecha Nacimiento" id="fechaNacimiento" type="date" class="validate" name="txtFechaNacimiento" value="<?=$objDeportistas->obtenerFechaNacimiento()?>">
-					<label for="fechaNacimiento">Fecha Nacimiento</label>
-				</div>
-				<div class="input-field col s6">
-						<select name="txtGenero">
-							<option value="<?=$objDeportistas->obtenerGenero()?>">Seleccione una opcion</option>
-								<?php foreach($listaGenero as $clave => $valor){
+			<form action="index.php?r=<?=$rutaPagina?>" enctype="multipart/form-data" method="POST" class="col s12">
+				<div class="row">
+					<div class="input-field col s6">
+					<input placeholder="Titulo" id="titulo" type="text" class="validate" name="txtTitulo" value="<?=$objNoticias->obtenerTitulo()?>">
+						<label for="titulo">Titulo de la noticia</label>
+					</div>
+					<div class="input-field col s6">
+						<select name="txtCategoria">
+							<option value="">Seleccione una opcion</option>
+								<?php foreach($listaCategoria as $clave => $valor){
 
 								?>
 									<option value="<?=$clave?>"><?=$valor?></option>
@@ -257,32 +222,31 @@
 									}
 								?>
 						</select>
-						<label for="genero">Genero</label>
+						<label for="genero">Categoria</label>
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="input-field col s6">
-						<input placeholder="Pais" id="pais" type="text" class="validate" name="txtPais" value="<?=$objDeportistas->obtenerPais()?>">
-						<label for="Pais">Pais</label>
+						<input placeholder="Noticia" id="Noticia" type="text" class="validate" name="txtNoticia" value="<?=$objNoticias->obtenerNoticia()?>">
+						<label for="Noticia">Noticia</label>
 					</div>
-					<div class="input-field col s6">
-						<input placeholder="Posicion" id="posicion" type="text" class="validate" name="txtPosicion" value="<?=$objDeportistas->obtenerPosicion()?>">
-						<label for="Posicion">Posicion</label>
-					</div>
-				</div>	
+				</div>
 				<div class="file-field input-field">
 					<div class="btn">
 						<span>Imagen</span>
 						<input type="file" name="imagen" multiple>
 					</div>
 					<div class="file-path-wrapper">
-						<input class="file-path validate" type="text" placeholder="Ingrese un archivo">
+						<input class="file-path validate" type="text" placeholder="Subir un archivo">
 					</div>
-			    </div>	
-			</div>		
-			<button class="btn waves-effect waves-light" type="submit" name="accion" value="editar">Enviar
-				<i class="material-icons right">send</i>
-			</button>
+		    	</div>
+				<button class="btn waves-effect waves-light" type="submit" name="accion" value="ingresar">Enviar
+					<i class="material-icons right">send</i>
+				</button>
+			</form>
+		</div>
+	</div>
 		</form>
 	
 	</div>
@@ -291,13 +255,13 @@
 ?>
 <!-- BORRAR -->
 <?PHP 
-	if(isset($_GET['accion']) && $_GET['accion'] == "borrar" && isset($_GET['deportista']) && $_GET['deportista'] != ""){
+	if(isset($_GET['accion']) && $_GET['accion'] == "borrar" && isset($_GET['noticia']) && $_GET['noticia'] != ""){
 ?>
 	<div class="grey lighten-3 center-align">	
 		<form action="index.php?r=<?=$rutaPagina?>" method="POST" class="col s12">
-			<h3>Borrar Deportista</h3>
-			<h4>Desea borrar al deportista <b><?=$_GET['deportista']?></b>?</h4>
-			<input type="hidden" name="numero" value="<?=$_GET['deportista']?>">
+			<h3>Borrar Noticia</h3>
+			<h4>Desea borrar la noticia<b><?=$_GET['noticia']?></b>?</h4>
+			<input type="hidden" name="id" value="<?=$_GET['noticia']?>">
 			<button class="btn waves-effect waves-light red" type="submit" name="accion" value="borrar">Eliminar
 				<i class="material-icons right">deleted</i>
 			</button>
@@ -343,39 +307,33 @@
 			</th>
 		</tr>
 		<tr>
-			<th class="center">Nombre</th>
-			<th class="center">Apellido</th>
-			<th class="center">Fecha Nacimiento</th>
-			<th class="center">Genero</th>
-			<th class="center">Pais</th>
-			<th class="center">Posicion</th>
-			<th class="center">Numero</th>
+			<th class="center">Titulo</th>
+			<th class="center">Categoria</th>
+			<th class="center">Noticia</th>
+			<th class="center">ID</th>
 			<th class="center">Imagen</th>
 			<th class="center" style="width:200px">Botones</th>
 		</tr>
 	</thead>
 	<tbody>
 <?php
-				foreach($listaDeportistas AS $deportista){
+				foreach($listaNoticias AS $noticias){
 
 ?>
 		<tr>
-			<td class="center"><?=$deportista['nombre']?></td>
-			<td class="center"><?=$deportista['apellido']?></td>
-			<td class="center"><?=$deportista['fechaNacimiento']?></td>
-			<td class="center"><?=$deportista['genero']?></td>
-			<td class="center"><?=$deportista['pais']?></td>
-			<td class="center"><?=$deportista['posicion']?></td>
-			<td class="center"><?=$deportista['numero']?></td>
+			<td class="center"><?=$noticias['titulo']?></td>
+			<td class="center"><?=$noticias['categoria']?></td>
+			<td class="center"><?=$noticias['noticia']?></td>
+			<td class="center"><?=$noticias['id']?></td>
 			<td class="center div-padre">
-				<img src="archivos/imagenes/<?=$deportista['imagen']?>" style="width:130px;height:130px;">
+				<img src="archivos/imagenes/<?=$noticias['imagen']?>" style="width:130px;height:130px;">
 			</td>
 			<td>
 				<div class="right">
-					<a href="index.php?r=<?=$rutaPagina?>&accion=editar&deportista=<?=$deportista['numero']?>" class="waves-effect waves-light btn blue darken-5">
+					<a href="index.php?r=<?=$rutaPagina?>&accion=editar&noticia=<?=$noticias['id']?>" class="waves-effect waves-light btn blue darken-5">
 						<i class="material-icons">edit</i>
 					</a>
-					<a href="index.php?r=<?=$rutaPagina?>&accion=borrar&deportista=<?=$deportista['numero']?>" class="waves-effect waves-light btn red">
+					<a href="index.php?r=<?=$rutaPagina?>&accion=borrar&noticia=<?=$noticias['id']?>" class="waves-effect waves-light btn red">
 						<i class="material-icons">delete</i>
 					</a>
 				<div>
@@ -386,7 +344,7 @@
 ?>
 <!-- BUSCAR -->
 		<tr class="blue darken-4">
-			<td colspan="9">
+			<td colspan="6">
 				<ul class="pagination center">
 					<li class="waves-effect">
 						<a href="index.php?r=<?=$rutaPagina?>&pagina=1&buscador=<?=$buscar?>" class="white-text">
