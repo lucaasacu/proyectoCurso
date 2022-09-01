@@ -143,9 +143,36 @@
 	
 		}
 
+
+
+		public function listarPosicion(){
+
+			$arrayDeportista=array();
+
+			$sql = "SELECT * FROM deportistas WHERE estado = 1 ";
+			$lista = $this->traerListado($sql);
+
+			foreach($lista as $deportista){
+
+				$clave = strtolower(trim($deportista['posicion']));
+
+				$arrayDeportista[$clave][$deportista['numero']]=$deportista;
+
+			}
+
+
+
+			return $arrayDeportista;
+
+
+
+
+
+		}
+
 	}
 
-
+	
 
 
 

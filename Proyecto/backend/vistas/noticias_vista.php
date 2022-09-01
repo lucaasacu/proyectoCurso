@@ -35,17 +35,15 @@
 		print_r($_FILES);
 
 		$datos = array();
-		$datos['numero'] 			= isset($_POST['txtNumero'])?$_POST['txtNumero']:"";		
-		$datos['nombre'] 			= isset($_POST['txtNombre'])?$_POST['txtNombre']:"";
-		$datos['apellido']			= isset($_POST['txtApellido'])?$_POST['txtApellido']:"";
-		$datos['fechaNacimiento'] 	= isset($_POST['txtFechaNacimiento'])?$_POST['txtFechaNacimiento']:"";
-		$datos['posicion'] 			= isset($_POST['txtPosicion'])?$_POST['txtPosicion']:"";
-		$datos['pais'] 				= isset($_POST['txtPais'])?$_POST['txtPais']:"";
-		$datos['genero'] 			= isset($_POST['txtGenero'])?$_POST['txtGenero']:"";
+		$datos['id'] 							= isset($_POST['txtId'])?$_POST['txtId']:"";		
+		$datos['titulo'] 						= isset($_POST['txtTitulo'])?$_POST['txtTitulo']:"";
+		$datos['categoria']						= isset($_POST['txtCategoria'])?$_POST['txtCategoria']:"";
+		$datos['noticia'] 						= isset($_POST['txtNoticia'])?$_POST['txtNoticia']:"";
+		
 
 
 
-		$archivo = $objDeportistas->subirImagen($_FILES['imagen'], "800","600");
+		$archivo = $objNoticias->subirImagen($_FILES['imagen'], "800","600");
 		if($archivo){
 			
 			$datos['imagen'] 	= $archivo;
@@ -55,17 +53,17 @@
 			$datos['imagen'] 	= "";
 
 		}
-		$objDeportistas->constructor($datos);
-		$respuesta = $objDeportistas->editar();
+		$objNoticias->constructor($datos);
+		$respuesta = $objNoticias->editar();
 
 	}
 
 //Borrar (Constructor)
-	if(isset($_POST["accion"]) && $_POST['accion'] == "borrar" && isset($_POST["numero"]) && $_POST['numero'] != ""){
+	if(isset($_POST["accion"]) && $_POST['accion'] == "borrar" && isset($_POST["id"]) && $_POST['id'] != ""){
 
-		$numero = $_POST['numero'];
-		$objDeportistas->cargar($numero);
-		$respuesta = $objDeportistas->borrar();
+		$id = $_POST['id'];
+		$objNoticias->cargar($numero);
+		$respuesta = $objNoticias->borrar();
 
 	}
 
@@ -77,7 +75,7 @@
 
 	$arrayFiltros = array("buscar"=>$buscar);
 
-	$totalMaximo = $objDeportistas->totalPaginas($arrayFiltros);
+	$totalMaximo = $objNoticias->totalPaginas($arrayFiltros);
 	if(isset($_GET['pagina']) && $_GET['pagina'] != ""){
 		// Validados que la pagina siempre sea un numero
 		$pagina = (int)$_GET['pagina'];
@@ -105,8 +103,10 @@
 	}
 
 	$arrayFiltros['pagina'] = $pagina - 1;
-	$listaDeportistas = $objDeportistas->listar($arrayFiltros);
-	$listaGenero = $objDeportistas->listaTipoGenero();
+	$listaNoticias = $objNoticias->listar($arrayFiltros);
+
+	/* $listaGenero = $objNoticias->listaTipoGenero();*/
+
 
 ?>
 <h1>Deportistas</h1>

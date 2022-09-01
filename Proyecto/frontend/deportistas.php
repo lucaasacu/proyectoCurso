@@ -2,7 +2,7 @@
 	require_once("php/modelos/deportistas_modelo.php");
 
   $objDeportistas = new deportistas_modelo();
-	$listaDeportistas = $objDeportistas->listar();
+	$listaDeportistas = $objDeportistas->listarPosicion();
 ?>
 <!DOCTYPE html>
   <html>
@@ -22,13 +22,13 @@
       <title>JUGADORES</title>
       <link rel="icon" href="imagenes/logo.png">
           <style>
-    .row .col.m11 {
-    width: 91.6666666667%;
-    margin-left: auto;
-    left: auto;
-    margin: 30px;
-    right: auto;
-}
+          .row .col.m11 {
+          width: 91.6666666667%;
+          margin-left: auto;
+          left: auto;
+          margin: 30px;
+          right: auto;
+      }
 
           .fa {
         display: inline-table;
@@ -92,7 +92,7 @@
 </style>
 </head>
 <body>
-  <!--++++++ Nav bar ++++++-->
+  <!--++++++ Nav ++++++-->
   <nav>
               <div class="nav-wrapper blue darken-5">
                   <a href="index.php" class="brand-logo center"><b>Club Nacional de Football</b></a>
@@ -129,17 +129,15 @@
   <h1 class="center">Plantel 2022</h1>
 
 
-
+<!--GOLEROS-->
   <h2 class="red center white-text">GOLEROS</h2>
   <div class="row">
 
 <?php
 
-			foreach($listaDeportistas as $deportistas){;
+			foreach($listaDeportistas['golero'] as $deportistas){;
 ?>
 
-
-<!--GOLEROS-->
     <div class="col s4 m3">
       <div class="card"> 
         <div class="card-image activator" style="background-image: url('http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$deportistas['imagen']?>');">
@@ -158,13 +156,125 @@
     </div>
       </div>
   </div>
+
 <?php
 
       }
 ?>
-			</div>
+</div>
+
+
+
+
+<!--DEFENSA-->
+<h2 class="red center white-text">DEFENSA</h2>
+  <div class="row">
+
+<?php
+
+			foreach($listaDeportistas['defensa'] as $deportistas){;
+?>
+
+    <div class="col s4 m3">
+      <div class="card"> 
+        <div class="card-image activator" style="background-image: url('http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$deportistas['imagen']?>');">
+          <span class="card-title red"><?=$deportistas['numero']?></span>
+        </div>
+        <div class="card-content">
+          <p><b> <?=$deportistas['nombre']?> <?=$deportistas['apellido']?>  </b></p>
+        </div>
+        <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+      <ul>
+        <li><p>Fecha de nacimiento: <br> <?=$deportistas['fechaNacimiento']?></p></li>
+        <li><p>Genero: <?=$deportistas['genero']?></p></li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+<?php
+
+      }
+?>
+</div>
+
+
+
+
+<!--MEDIOCAMPO-->
+<h2 class="red center white-text">MEDIOCAMPO</h2>
+  <div class="row">
+
+<?php
+
+			foreach($listaDeportistas['mediocampista'] as $deportistas){;
+?>
+
+    <div class="col s4 m3">
+      <div class="card"> 
+        <div class="card-image activator" style="background-image: url('http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$deportistas['imagen']?>');">
+          <span class="card-title red"><?=$deportistas['numero']?></span>
+        </div>
+        <div class="card-content">
+          <p><b> <?=$deportistas['nombre']?> <?=$deportistas['apellido']?>  </b></p>
+        </div>
+        <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+      <ul>
+        <li><p>Fecha de nacimiento: <br> <?=$deportistas['fechaNacimiento']?></p></li>
+        <li><p>Genero: <?=$deportistas['genero']?></p></li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+<?php
+
+      }
+?>
+</div>
+
+
+
+
+<!--DELANTEROS-->
+<h2 class="red center white-text">DELANTEROS</h2>
+  <div class="row">
+
+<?php
+
+			foreach($listaDeportistas['delantero'] as $deportistas){;
+?>
+
+    <div class="col s4 m3">
+      <div class="card"> 
+        <div class="card-image activator" style="background-image: url('http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$deportistas['imagen']?>');">
+          <span class="card-title red"><?=$deportistas['numero']?></span>
+        </div>
+        <div class="card-content">
+          <p><b> <?=$deportistas['nombre']?> <?=$deportistas['apellido']?>  </b></p>
+        </div>
+        <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+      <ul>
+        <li><p>Fecha de nacimiento: <br> <?=$deportistas['fechaNacimiento']?></p></li>
+        <li><p>Genero: <?=$deportistas['genero']?></p></li>
+      </ul>
+
+    </div>
+      </div>
+  </div>
+
+<?php
+
+      }
+?>
+</div>
 <main></main>
-  <!--Footer-->
+
+
+<!--Footer-->
 <footer class="page-footer blue darken-6">
           <div class="container">
             <div class="row">
