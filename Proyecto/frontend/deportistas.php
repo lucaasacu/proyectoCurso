@@ -88,10 +88,26 @@
     font-weight: bold;
     }
 
+    .card .card-content {
+    padding: 20px;
+}
+
+.row .col.m3 {
+    width: auto;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
+.fondito{
+
+  background-color:#e3f2fd;
+}
+
         
 </style>
 </head>
-<body>
+<body class="fondito">
   <!--++++++ Nav ++++++-->
   <nav>
               <div class="nav-wrapper blue darken-5">
@@ -126,12 +142,16 @@
               </div>
           </nav>
       <div class="container blue darken-5"></div>
-  <h1 class="center">Plantel 2022</h1>
-
+<br>
 
 <!--GOLEROS-->
-  <h2 class="red center white-text">GOLEROS</h2>
+<div class="center">
+<img src="imagenes/golero.png" style="width: 20%;">
+</div>
+
+
   <div class="row">
+  <br><br>
 
 <?php
 
@@ -163,13 +183,15 @@
 ?>
 </div>
 
-
+<br><br>
 
 
 <!--DEFENSA-->
-<h2 class="red center white-text">DEFENSA</h2>
+<div class="center">
+<img src="imagenes/defensa.png" style="width: 20%;">
+</div>
   <div class="row">
-
+  <br><br>
 <?php
 
 			foreach($listaDeportistas['defensa'] as $deportistas){;
@@ -198,14 +220,16 @@
       }
 ?>
 </div>
-
+<br><br>
 
 
 
 <!--MEDIOCAMPO-->
-<h2 class="red center white-text">MEDIOCAMPO</h2>
+<div class="center">
+<img src="imagenes/mc.png" style="width: 20%;">
+</div>
   <div class="row">
-
+  <br><br><br>
 <?php
 
 			foreach($listaDeportistas['mediocampista'] as $deportistas){;
@@ -234,14 +258,16 @@
       }
 ?>
 </div>
-
+<br><br>
 
 
 
 <!--DELANTEROS-->
-<h2 class="red center white-text">DELANTEROS</h2>
+<div class="center">
+<img src="imagenes/dc.png" style="width: 20%;">
+</div>
   <div class="row">
-
+  <br><br>
 <?php
 
 			foreach($listaDeportistas['delantero'] as $deportistas){;
@@ -266,11 +292,13 @@
       </div>
   </div>
 
+
 <?php
 
       }
 ?>
 </div>
+<br><br>
 <main></main>
 
 

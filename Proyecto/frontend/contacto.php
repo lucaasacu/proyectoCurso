@@ -98,38 +98,38 @@ button, [type=button], [type=reset], [type=submit] {
 <body class="rojo">
   <!--++++++ Nav bar ++++++-->
   <nav>
-              <div class="nav-wrapper blue darken-5">
-                  <a href="index.php" class="brand-logo center"><b>Club Nacional de Football</b></a>
-                  <a href="index.php"><img src="imagenes/logo.png"></a>
-                      <ul class="right hide-on-med-and-down">
-                          <li><a href="index.php" class="tooltipped" data-position="bottom" data-tooltip="Inicio"><i class="material-icons">home</i></a></li>
-                          <li><a href="noticias.php" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a></li>
-                          <li><a href="deportistas.php" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
-                          <li><a href="contacto.php" class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
-                         <!--Menu para cerrar sesion -->
-                            <li>
-                              <a class='dropdown-trigger' href='#' data-target='dropdown1'>
-                                <i class="material-icons">menu</i>
-                              </a>						
-                              <ul id='dropdown1' class='dropdown-content blue darken-6'>
-                               <li>
-                                <?=$_SESSION['usuario']?>	
-                              </li>
-                              <li class="divider" tabindex="-1"></li>
-                              <li>
-                                <a href="#!">
-                                  <i class="material-icons">person</i>Perfil
-                              </a>
-                            </li>
-                              <li>
-                                <a href="login.php">
-                                  <i class="material-icons">exit_to_app</i>Salir
-                              </a>
-                            </li>
-                      </ul>
-              </div>
-          </nav>
-      <div class="container blue darken-5"></div>
+      <div class="nav-wrapper blue darken-5">
+          <a href="index.php" class="brand-logo center"><b>Club Nacional de Football</b></a>
+          <a href="index.php"><img src="imagenes/logo.png"></a>
+              <ul class="right hide-on-med-and-down">
+                  <li><a href="index.php" class="tooltipped" data-position="bottom" data-tooltip="Inicio"><i class="material-icons">home</i></a></li>
+                  <li><a href="noticias.php" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a></li>
+                  <li><a href="deportistas.php" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
+                  <li><a href="contacto.php" class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
+                  <!--Menu para cerrar sesion -->
+                    <li>
+                      <a class='dropdown-trigger' href='#' data-target='dropdown1'>
+                        <i class="material-icons">menu</i>
+                      </a>						
+                      <ul id='dropdown1' class='dropdown-content blue darken-6'>
+                        <li>
+                        <?=$_SESSION['usuario']?>	
+                      </li>
+                      <li class="divider" tabindex="-1"></li>
+                      <li>
+                        <a href="#!">
+                          <i class="material-icons">person</i>Perfil
+                      </a>
+                    </li>
+                      <li>
+                        <a href="login.php">
+                          <i class="material-icons">exit_to_app</i>Salir
+                      </a>
+                    </li>
+              </ul>
+      </div>
+  </nav>
+<div class="container blue darken-5"></div>
 <!--Formulario de contacto-->
   <div class="row">
     <form class="col s12">
