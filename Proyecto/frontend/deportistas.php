@@ -82,6 +82,7 @@
 }
 .card {
     float: left;
+    border-radius: 30px;
 }
 .card-content{
     text-align: center;
@@ -101,7 +102,12 @@
 
 .fondito{
 
-  background-color:#e3f2fd;
+  background-image: url("imagenes/fondo6.png");
+}
+
+.card .card-image {
+    position: relative;
+    border-radius: 35px;
 }
 
         
@@ -188,7 +194,7 @@
 
 <!--DEFENSA-->
 <div class="center">
-<img src="imagenes/defensa.png" style="width: 20%;">
+<img src="imagenes/def.png" style="width: 20%;">
 </div>
   <div class="row">
   <br><br>
@@ -226,7 +232,7 @@
 
 <!--MEDIOCAMPO-->
 <div class="center">
-<img src="imagenes/mc.png" style="width: 20%;">
+<img src="imagenes/mediocampo.png" style="width: 27%;">
 </div>
   <div class="row">
   <br><br><br>
@@ -264,7 +270,7 @@
 
 <!--DELANTEROS-->
 <div class="center">
-<img src="imagenes/dc.png" style="width: 20%;">
+<img src="imagenes/delanteros.png" style="width: 27%;">
 </div>
   <div class="row">
   <br><br>
