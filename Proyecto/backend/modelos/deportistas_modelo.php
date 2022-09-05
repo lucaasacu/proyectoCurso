@@ -250,6 +250,19 @@
 	
 		}
 
+		public function listaPos(){
+
+			$arrayPos = array();
+			$arrayPos['Golero'] 				= "Golero";
+			$arrayPos['Defensa'] 				= "Defensa";
+			$arrayPos['Mediocampista'] 			= "Mediocampista";
+			$arrayPos['Delantero'] 				= "Delantero";
+
+			return $arrayPos;
+	
+		}
+
+
 	}
 
 

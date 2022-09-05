@@ -204,6 +204,13 @@
 	<div class="grey lighten-3 center-align">	
 		<h3>Editar Noticias</h3>
 		<form action="index.php?r=<?=$rutaPagina?>" enctype="multipart/form-data" method="POST" class="container col s10">
+		<div class="row">
+				<div class="input-field col s12">
+					<input placeholder="Id" id="Id" type="text" class="validate" value="<?=$objNoticias->obtenerId()?>" disabled>
+					<input type="hidden" name="txtId" value="<?=$objNoticias->obtenerId()?>">
+					<label for="Id">ID</label>
+				</div>
+			</div>
 			<div class="row">
 			<form action="index.php?r=<?=$rutaPagina?>" enctype="multipart/form-data" method="POST" class="col s12">
 				<div class="row">
@@ -241,7 +248,7 @@
 						<input class="file-path validate" type="text" placeholder="Subir un archivo">
 					</div>
 		    	</div>
-				<button class="btn waves-effect waves-light" type="submit" name="accion" value="ingresar">Enviar
+				<button class="btn waves-effect waves-light" type="submit" name="accion" value="editar">Enviar
 					<i class="material-icons right">send</i>
 				</button>
 			</form>
@@ -278,7 +285,7 @@
 	<thead>
 
 		<tr>
-			<th class="" colspan=7>
+			<th class="" colspan=4>
 				<div class="left">
 					<a class="waves-effect waves-light btn modal-trigger blue darken-4" href="#modal1">
 						<i class="material-icons left">group_add</i>Ingresar
@@ -323,10 +330,21 @@
 		<tr>
 			<td class="center"><?=$noticias['titulo']?></td>
 			<td class="center"><?=$noticias['categoria']?></td>
-			<td class="center"><?=$noticias['noticia']?></td>
+			<td class="center">
+				<a class="waves-effect waves-light btn modal-trigger blue darken-5" href="#modal3">Noticia</a>
+				<div id="modal3" class="modal">
+					<div class="modal-content">
+					<h4><b><?=$noticias['titulo']?></b></h4>
+					<p><?=$noticias['noticia']?></p>
+					</div>
+					<div class="modal-footer">
+					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+					</div>
+				</div>		
+			</td>
 			<td class="center"><?=$noticias['id']?></td>
 			<td class="center div-padre">
-				<img src="archivos/imagenes/<?=$noticias['imagen']?>" style="width:130px;height:130px;">
+				<img src="archivos/imagenes/<?=$noticias['imagen']?>" style="width:280px;height:200px;">
 			</td>
 			<td>
 				<div class="right">

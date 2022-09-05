@@ -110,6 +110,7 @@
 	$arrayFiltros['pagina'] = $pagina - 1;
 	$listaDeportistas = $objDeportistas->listar($arrayFiltros);
 	$listaGenero = $objDeportistas->listaTipoGenero();
+	$listaPos = $objDeportistas->listaPos();
 
 ?>
 <h1>Deportistas</h1>
@@ -165,8 +166,17 @@
 						<label for="Pais">Pais</label>
 					</div>
 					<div class="input-field col s6">
-						<input placeholder="Posicion" id="posicion" type="text" class="validate" name="txtPosicion">
-						<label for="Posicion">Posicion</label>
+						<select name="txtPosicion">
+							<option value="">Seleccione una opcion</option>
+								<?php foreach($listaPos as $clave => $valor){
+
+								?>
+									<option value="<?=$clave?>"><?=$valor?></option>
+								<?PHP
+									}
+								?>
+						</select>
+						<label for="posicion">Posicion</label>
 					</div>
 				</div>
 				<div class="row">

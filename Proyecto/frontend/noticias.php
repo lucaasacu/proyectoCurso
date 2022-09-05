@@ -1,5 +1,8 @@
 <?php
+	require_once("php/modelos/noticias_modelo.php");
 
+  $objNoticias = new noticias_modelo();
+  $listaNoticias = $objNoticias->listar();
 ?>
 <!DOCTYPE html>
   <html>
@@ -18,63 +21,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>NOTICIAS</title>
       <link rel="icon" href="imagenes/logo.png">
-          <style>
-    .row .col.m11 {
-    width: 91.6666666667%;
-    margin-left: auto;
-    left: auto;
-    margin: 30px;
-    right: auto;
-}
-
-          .fa {
-        display: inline-table;
-        font: normal normal normal 14px/1 FontAwesome;
-        font-size: 24px;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        }
-        /*Texto rojo cuando pasas el mouse*/
-                a.ex1:hover, a.ex1:active {color: red;}
-                
-        /*Tabla de perfil/cerrar sesion*/
-        .dropdown-content li {
-            color: white;
-            text-align: center;
-        }
-        .dropdown-content li>a, .dropdown-content li>span {
-            color: white;
-        }
-        .dropdown-content li>a>i {
-          height: inherit;
-            line-height: inherit;
-            float: left;
-            margin: 0 0px 0px 20px;
-        }
-        .card-panel {
-    border-radius: 14px;
-    border-bottom: 7px solid red;
-      }
-      td{
-        padding: 15px 0px;
-        padding-left: 35px;
-      }
-      .fon{
-        background-color:red;
-      }
-      .card-image {
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  width:auto;
-}
-.card .card-image img {
-margin: 0 0;
-}
-
-
-        
+     
 </style>
 </head>
 <body>
@@ -115,108 +62,32 @@ margin: 0 0;
 <!--NOTICIAS-->
   <h1 class="center"><b>Noticias locales</b></h1>
   <br><br>
-
-
-<main>
-<div class="row">
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator"src="imagenes/campeon.jpg">
-        </div>
-        <div class="card-content">
-         <span class="card-title activator grey-text text-darken-4">Noticias<i class="material-icons right">arrow_upward</i></span>
-          <p><a href="#">Fecha</a></p>
-        </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Noticia<i class="material-icons right">close</i></span>
-        <p>Informacion de la noticia</p>
-      </div>
-        </div>
-    </div>
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator"src="imagenes/campeon.jpg">
-        </div>
-        <div class="card-content">
-         <span class="card-title activator grey-text text-darken-4">Noticias<i class="material-icons right">arrow_upward</i></span>
-          <p><a href="#">Fecha</a></p>
-        </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Noticia<i class="material-icons right">close</i></span>
-        <p>Informacion de la noticia</p>
-      </div>
-        </div>
-    </div>
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator"src="imagenes/campeon.jpg">
-        </div>
-        <div class="card-content">
-         <span class="card-title activator grey-text text-darken-4">Noticias<i class="material-icons right">arrow_upward</i></span>
-          <p><a href="#">Fecha</a></p>
-        </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Noticia<i class="material-icons right">close</i></span>
-        <p>Informacion de la noticia</p>
-      </div>
-        </div>
-    </div>
-    
-  </div>
-  <br><br>
-  <h1 class="center"><b>Noticias internacionales</b></h1>
-  <br><br>
-</div>
-  
+  <main>
   <div class="row">
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator"src="imagenes/campeon.jpg">
-        </div>
-        <div class="card-content">
-         <span class="card-title activator grey-text text-darken-4">Noticias<i class="material-icons right">arrow_upward</i></span>
-          <p><a href="#">Fecha</a></p>
-        </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Noticia<i class="material-icons right">close</i></span>
-        <p>Informacion de la noticia</p>
-      </div>
-        </div>
+  <?php
+      foreach($listaNoticias as $noticias){;
+  ?>
+<div class="col s12 m4">
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
     </div>
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator"src="imagenes/campeon.jpg">
-        </div>
-        <div class="card-content">
-         <span class="card-title activator grey-text text-darken-4">Noticias<i class="material-icons right">arrow_upward</i></span>
-          <p><a href="#">Fecha</a></p>
-        </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Noticia<i class="material-icons right">close</i></span>
-        <p>Informacion de la noticia</p>
-      </div>
-        </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">This is a link</a></p>
     </div>
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator"src="imagenes/campeon.jpg">
-        </div>
-        <div class="card-content">
-         <span class="card-title activator grey-text text-darken-4">Noticias<i class="material-icons right">arrow_upward</i></span>
-          <p><a href="#">Fecha</a></p>
-        </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Noticia<i class="material-icons right">close</i></span>
-        <p>Informacion de la noticia</p>
-      </div>
-        </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
     </div>
+  </div>
+  </div>
+            
+            
+    <?php
+  }
+  ?>
+  </div>
 </main>
   <!--Footer-->
 <footer class="page-footer blue darken-6">
