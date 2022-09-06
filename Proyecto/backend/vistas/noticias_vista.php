@@ -16,6 +16,7 @@
 		$datos['id'] 							= isset($_POST['txtId'])?$_POST['txtId']:"";		
 		$datos['titulo'] 						= isset($_POST['txtTitulo'])?$_POST['txtTitulo']:"";
 		$datos['categoria']						= isset($_POST['txtCategoria'])?$_POST['txtCategoria']:"";
+		$datos['fechaPublicacion']				= isset($_POST['txtFechaPublicacion'])?$_POST['txtFechaPublicacion']:"";
 		$datos['noticia'] 						= isset($_POST['txtNoticia'])?$_POST['txtNoticia']:"";
 		$datos['imagen'] 						= $archivo;
 
@@ -38,6 +39,7 @@
 		$datos['id'] 							= isset($_POST['txtId'])?$_POST['txtId']:"";		
 		$datos['titulo'] 						= isset($_POST['txtTitulo'])?$_POST['txtTitulo']:"";
 		$datos['categoria']						= isset($_POST['txtCategoria'])?$_POST['txtCategoria']:"";
+		$datos['fechaPublicacion']				= isset($_POST['txtFechaPublicacion'])?$_POST['txtFechaPublicacion']:"";
 		$datos['noticia'] 						= isset($_POST['txtNoticia'])?$_POST['txtNoticia']:"";
 		
 
@@ -151,6 +153,10 @@
 						<input placeholder="Noticia" id="Noticia" type="text" class="validate" name="txtNoticia">
 						<label for="Noticia">Noticia</label>
 					</div>
+					<div class="input-field col s6">
+					<input placeholder="Fecha Publicacion" id="fechaPublicacion" type="date" class="validate" name="txtFechaPublicacion">
+					<label for="fechaPublicacion">Fecha de Publicacion</label>
+				</div>
 				</div>
 				<div class="file-field input-field">
 					<div class="btn">
@@ -238,6 +244,10 @@
 						<input placeholder="Noticia" id="Noticia" type="text" class="validate" name="txtNoticia" value="<?=$objNoticias->obtenerNoticia()?>">
 						<label for="Noticia">Noticia</label>
 					</div>
+					<div class="input-field col s6">
+					<input placeholder="Fecha Publicacion" id="fechaPublicacion" type="date" class="validate" name="txtFechaPublicacion" value="<?=$objNoticias->obtenerFechaPublicacion()?>">
+					<label for="fechaPublicacion">Fecha de Publicacion</label>
+				</div>
 				</div>
 				<div class="file-field input-field">
 					<div class="btn">
@@ -317,6 +327,7 @@
 			<th class="center">Titulo</th>
 			<th class="center">Categoria</th>
 			<th class="center">Noticia</th>
+			<th class="center">Fecha Publicacion</th>
 			<th class="center">ID</th>
 			<th class="center">Imagen</th>
 			<th class="center" style="width:200px">Botones</th>
@@ -342,6 +353,7 @@
 					</div>
 				</div>		
 			</td>
+			<td class="center"><?=$noticias['fechapublicacion']?></td>
 			<td class="center"><?=$noticias['id']?></td>
 			<td class="center div-padre">
 				<img src="archivos/imagenes/<?=$noticias['imagen']?>" style="width:280px;height:200px;">
@@ -362,7 +374,7 @@
 ?>
 <!-- BUSCAR -->
 		<tr class="blue darken-4">
-			<td colspan="6">
+			<td colspan="7">
 				<ul class="pagination center">
 					<li class="waves-effect">
 						<a href="index.php?r=<?=$rutaPagina?>&pagina=1&buscador=<?=$buscar?>" class="white-text">

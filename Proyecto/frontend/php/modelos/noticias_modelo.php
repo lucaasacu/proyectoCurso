@@ -17,6 +17,8 @@
 		
 		protected $imagen;
 
+		protected $fechaPublicacion;
+
 		private $totalEnLista = 4;
 
 
@@ -35,6 +37,9 @@
 		public function obtenerImagen(){
 			return $this->imagen;	
 		}
+		public function obtenerFechaPublicacion(){
+			return $this->fechaPublicacion;	
+		}
 
 // Funcion constructor
 		public function constructor($data = array()){
@@ -43,6 +48,7 @@
 			$this->categoria			= $data['categoria'];
 			$this->titulo 				= $data['titulo'];
 			$this->noticia				= $data['noticia'];
+			$this->fechaPublicacion		= $data['fechaPublicacion'];
 			$this->imagen 				= $data['imagen'];
 		}
 
@@ -60,6 +66,7 @@
 				$this->titulo 				= $lista[0]['titulo'];
 				$this->noticia 				= $lista[0]['noticia'];
 				$this->estado 				= $lista[0]['estado'];
+				$this->fechaPublicacion 	= $lista[0]['fechaPublicacion'];
 				$this->imagen 				= $lista[0]['imagen'];	
 
 			}
@@ -122,6 +129,31 @@
 	
 		}
 
+
+		public function listaCat(){
+
+			$arrayNoticia=array();
+
+			$sql = "SELECT * FROM noticias WHERE estado = 1 ";
+			$lista = $this->traerListado($sql);
+
+			foreach($lista as $noticia){
+
+				$clave = strtolower(trim($noticia['categoria']));
+
+				$arrayNoticia[$clave][$noticia['id']]=$noticia;
+
+			}
+
+
+
+			return $arrayNoticia;
+
+
+
+
+
+		}
 
 
 }

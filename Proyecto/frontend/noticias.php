@@ -2,7 +2,8 @@
 	require_once("php/modelos/noticias_modelo.php");
 
   $objNoticias = new noticias_modelo();
-  $listaNoticias = $objNoticias->listar();
+  $listaNoticias = $objNoticias->listaCat();
+
 ?>
 <!DOCTYPE html>
   <html>
@@ -21,10 +22,25 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>NOTICIAS</title>
       <link rel="icon" href="imagenes/logo.png">
-     
+     <style>
+
+      .card .card-image img {
+    width: 100%;
+    height: 500px;
+}
+.row .col {
+    padding: 2.75rem;
+}
+.fondito{
+
+background-image: url("imagenes/fondo6.png");
+}
+
+
+
 </style>
 </head>
-<body>
+<body class="fondito">
   <!--++++++ Nav bar ++++++-->
   <nav>
               <div class="nav-wrapper blue darken-5">
@@ -59,36 +75,162 @@
               </div>
           </nav>
       <div class="container blue darken-5"></div>
-<!--NOTICIAS-->
-  <h1 class="center"><b>Noticias locales</b></h1>
+
+
+<!--NOTICIAS JUGADORES-->
+
+  <h1 class="center white"><b>Jugadores</b></h1>
   <br><br>
-  <main>
+
   <div class="row">
   <?php
-      foreach($listaNoticias as $noticias){;
+      foreach($listaNoticias['jugadores'] as $noticias){;
   ?>
-<div class="col s12 m4">
+<div class="col s12 m5">
 <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
+      <img class="activator" style="margin: 0 0;" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
     </div>
     <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-      <p><a href="#">This is a link</a></p>
+      <span class="card-title activator grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">more_vert</i></span>
+      <p><a class="red-text"><?=$noticias['fechapublicacion']?></a></p>
     </div>
     <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      <span class="card-title grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">close</i></span>
+      <p><?=$noticias['noticia']?></p>
+      <p><a class="red-text"><?=$noticias['fechapublicacion']?></a></p>
     </div>
   </div>
   </div>
-            
             
     <?php
   }
   ?>
   </div>
-</main>
+  </div>
+
+
+  <!--NOTICIAS RESULTADOS-->
+
+  <h1 class="center white"><b>Resultados</b></h1>
+  <br><br>
+
+  <div class="row">
+  <?php
+      foreach($listaNoticias['resultados'] as $noticias){;
+  ?>
+<div class="col s12 m5">
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" style="margin: 0 0;" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">more_vert</i></span>
+      <p><a class="red-text"><?=$noticias['fechapublicacion']?></a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">close</i></span>
+      <p><?=$noticias['noticia']?></p>
+    </div>
+  </div>
+  </div>
+            
+    <?php
+  }
+  ?>
+  </div>
+
+  <!--NOTICIAS MERCADO-->
+
+  <h1 class="center white"><b>Mercado</b></h1>
+  <br><br>
+
+  <div class="row">
+  <?php
+      foreach($listaNoticias['mercado'] as $noticias){;
+  ?>
+<div class="col s12 m6">
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" style="margin: 0 0;" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">more_vert</i></span>
+      <p><a class="red-text"><?=$noticias['fechapublicacion']?></a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">close</i></span>
+      <p><?=$noticias['noticia']?></p>
+    </div>
+  </div>
+  </div>
+            
+    <?php
+  }
+  ?>
+  </div>
+
+  <!--NOTICIAS INTERNACIONALES-->
+
+  <h1 class="center white"><b>Internacionales</b></h1>
+  <br><br>
+
+  <div class="row">
+  <?php
+      foreach($listaNoticias['internacionales'] as $noticias){;
+  ?>
+<div class="col s12 m6">
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" style="margin: 0 0;" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">more_vert</i></span>
+      <p><a class="red-text"><?=$noticias['fechapublicacion']?></a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">close</i></span>
+      <p><?=$noticias['noticia']?></p>
+    </div>
+  </div>
+  </div>
+            
+    <?php
+  }
+  ?>
+  </div>
+
+  <!--NOTICIAS SOCIALES-->
+
+  <h1 class="center white"><b>Sociales</b></h1>
+  <br><br>
+
+  <div class="row">
+  <?php
+      foreach($listaNoticias['sociales'] as $noticias){;
+  ?>
+<div class="col s12 m6">
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" style="margin: 0 0;" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">more_vert</i></span>
+      <p><a class="red-text"><?=$noticias['fechapublicacion']?></a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">close</i></span>
+      <p><?=$noticias['noticia']?></p>
+    </div>
+  </div>
+  </div>
+            
+    <?php
+  }
+  ?>
+  </div>
+
+  <main></main>
   <!--Footer-->
 <footer class="page-footer blue darken-6">
           <div class="container">
