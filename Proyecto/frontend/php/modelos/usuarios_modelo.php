@@ -11,6 +11,8 @@
 
 		protected $estado;
 
+		protected $clave;
+
 		private $totalEnLista = 6;
 
 
@@ -23,6 +25,10 @@
 		public function obtenerApellido(){
 			return $this->apellido;	
 		}
+		public function obtenerClave(){
+			return $this->clave;	
+		}
+
 
 
 		public function constructor($data = array()){
@@ -30,6 +36,7 @@
 			$this->email 			= $data['email'];
 			$this->nombre 			= $data['nombre'];
 			$this->apellido 		= $data['apellido'];
+			$this->clave 			= $data['clave'];
 
 		}
 
@@ -48,20 +55,23 @@
 				return $arrayRespuesta;
 			}
 
-
+			
 
 			$sql = "INSERT INTO usuarios SET
 						email		= :email,
 						nombre 		= :nombre,
 						apellido	= :apellido,
+						clave       = md5(:clave),
 						estado 		= 1;";
 			$arrayDatos = array(
 
 				"email" 		=> $this->email,
 				"nombre" 		=> $this->nombre,
 				"apellido" 		=> $this->apellido,
+				"clave" 		=> $this->clave,
 
 			);
+		
 			$respuesta = $this->ejecutarConsulta($sql, $arrayDatos);
 
 			
@@ -88,6 +98,7 @@
 				$this->email 			= $lista[0]['email'];
 				$this->nombre 			= $lista[0]['nombre'];
 				$this->apellido 		= $lista[0]['apellido'];
+				$this->clave 			= $lista[0]['clave'];
 				$this->estado 			= $lista[0]['estado'];	
 			}
 

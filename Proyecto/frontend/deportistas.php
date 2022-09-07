@@ -24,9 +24,15 @@
 	
 			$_SESSION['emailUsuario'] = $objUsuario->obtenerEmail();
 			$_SESSION['nomUsuario']   = $objUsuario->obtenerNombre()." ".$objUsuario->obtenerApellido();
+		}else{
+			unset($_SESSION['emailUsuario'] );
+			session_destroy();
+			echo '<script type="text/javascript">
+       window.onload = function () { alert("Error en el login, porfavor intentalo nuevamente"); } 
+        </script>';
+  	
 		}
-
-	}
+  }
 
   $nombreLogin = "";
 	if(isset($_SESSION['nomUsuario']) && $_SESSION['nomUsuario'] != ""){

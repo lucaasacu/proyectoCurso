@@ -20,8 +20,18 @@
 			$_SESSION['emailUsuario'] = $objUsuario->obtenerEmail();
 			$_SESSION['nomUsuario']   = $objUsuario->obtenerNombre()." ".$objUsuario->obtenerApellido();
 		}
+    
+    /*else{
+			unset($_SESSION['emailUsuario'] );
+			session_destroy();
+			echo '<script type="text/javascript">
+       window.onload = function () { alert("Error en el login, porfavor intentalo nuevamente"); } 
+        </script>';
+  	
+		}*/
+  }
 
-	}
+	
 
   $nombreLogin = "";
 	if(isset($_SESSION['nomUsuario']) && $_SESSION['nomUsuario'] != ""){
@@ -29,7 +39,25 @@
 
 
 		}
-	
+
+    $respuesta = array();
+    if(isset($_POST["accion"]) && $_POST['accion'] == "ingresar" ){
+  
+      $datos = array();
+      $datos['nombre'] 						= isset($_POST['txtNombre'])?$_POST['txtNombre']:"";		
+      $datos['apellido'] 					= isset($_POST['txtApellido'])?$_POST['txtApellido']:"";
+      $datos['email']				      = isset($_POST['txtEmail'])?$_POST['txtEmail']:"";
+      $datos['clave'] 						= isset($_POST['txtClave'])?$_POST['txtClave']:"";
+  
+      $objUsuario->constructor($datos);
+      $respuesta = $objUsuario->ingresar();
+  
+    }else{
+      $respuesta = array();
+      $respuesta['codigo'] = "Error";
+      $respuesta['mensaje'] = "Error al registrarse";
+      }
+  
 
 
 
@@ -116,6 +144,7 @@
                           <li><a href="noticias.php" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a></li>
                           <li><a href="deportistas.php" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
                           <li><a href="contacto.php" class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
+                          
 
 <?php
 			if($nombreLogin == ""){
@@ -132,7 +161,6 @@
 <?php
 			}
 ?>
-
                       </ul>
               </div>
     </nav>
@@ -155,9 +183,13 @@
 							<label for="clave">Clave</label>
 						</div>
 					</div>	
-					<button class="btn waves-effect waves-light" type="submit" >Entrar
+					<button class="btn waves-effect waves-light red" type="submit" >Entrar
 						<i class="material-icons right">send</i>
 					</button>
+          <div class="container center">
+          <h4>No tienes cuenta?</h4>
+          <a class="waves-effect waves-light btn modal-trigger red tooltipped" data-position="bottom" data-tooltip="Salir" href="#modalregister">Registrate</a>
+            </div>
 				</form>
 			</div>
 		</div>
@@ -178,6 +210,59 @@
 			</div>
 		</div>
 	</div>
+  <!--Menu para Registrarse -->
+					<div id="modalregister" class="modal">
+		<div class="modal-content">
+			<h3 class="center">Registrarse</h3>
+			<div class="container">
+				<form action="index.php?" method="POST" class="col s12">
+					<div class="row">
+						<div class="input-field col s12">
+							<input placeholder="Nombre" id="nombre" type="text" class="validate" name="txtNombre">
+							<label for="nombre">Nombre</label>
+						</div>
+            <div class="input-field col s12">
+							<input placeholder="Apellido" id="apellido" type="text" class="validate" name="txtApellido">
+							<label for="apellido">Apellido</label>
+						</div>
+					</div>				
+					<div class="row">
+          <div class="input-field col s12">
+							<input placeholder="Email" id="email" type="email" class="validate" name="txtEmail">
+							<label for="email">Email</label>
+						</div>
+						<div class="input-field col s12">
+							<input placeholder="Clave" id="clave" type="text" class="validate" name="txtClave">
+							<label for="clave">Clave</label>
+						</div>
+					</div>	
+          <button class="btn waves-effect waves-light red" type="submit" name="accion" value="ingresar">Enviar
+					<i class="material-icons right">send</i>
+				</button>
+    
+				</form>
+			</div>
+		</div>
+	</div>
+
+  <?php 
+	if(isset($respuesta['codigo']) && $respuesta['codigo'] == "Error"  ){
+?>
+	<div class="red center-align">	
+		<h3><?=$respuesta['mensaje']?></h3>
+	</div>
+<?php
+	}
+?>
+<?php
+	if(isset($respuesta['codigo']) && $respuesta['codigo'] == "OK"  ){
+?>
+	<div class="green center-align">	
+		<h3><?=$respuesta['mensaje']?></h3>
+	</div>
+<?php
+	}
+?>
           <main>
       <div class="container blue darken-5"></div>
 

@@ -4,6 +4,50 @@
   $objNoticias = new noticias_modelo();
   $listaNoticias = $objNoticias->listaCat();
 
+	require_once("php/modelos/usuarios_modelo.php");
+
+  @session_start();
+
+  if((!isset($_SESSION['emailUsuario']) || $_SESSION['emailUsuario']=="") || (!isset($_SESSION['nomUsuario'])|| $_SESSION['nomUsuario']=="")){
+
+    include"logout.php";
+  }
+
+  
+
+  
+
+  $objUsuario = new usuarios_modelo();
+	if( (isset($_POST['txtEmail']) && $_POST['txtEmail'] != "") && (isset($_POST['txtClave']) && $_POST['txtClave'] != "") ){
+
+
+		$email 	  = $_POST['txtEmail'];
+		$clave 		= $_POST['txtClave'];
+
+		$respuesta = $objUsuario->login($email, $clave);
+
+		if($respuesta){	
+	
+			$_SESSION['emailUsuario'] = $objUsuario->obtenerEmail();
+			$_SESSION['nomUsuario']   = $objUsuario->obtenerNombre()." ".$objUsuario->obtenerApellido();
+		}
+
+	}
+
+  $nombreLogin = "";
+	if(isset($_SESSION['nomUsuario']) && $_SESSION['nomUsuario'] != ""){
+		$nombreLogin = $_SESSION['nomUsuario'];
+
+
+		}
+	
+
+
+
+
+
+
+
 ?>
 <!DOCTYPE html>
   <html>
@@ -47,33 +91,72 @@ background-image: url("imagenes/fondo6.png");
                   <a href="index.php" class="brand-logo center"><b>Club Nacional de Football</b></a>
                   <a href="index.php"><img src="imagenes/logo.png"></a>
                       <ul class="right hide-on-med-and-down">
+                          <li><?= $nombreLogin ?></li>
                           <li><a href="index.php" class="tooltipped" data-position="bottom" data-tooltip="Inicio"><i class="material-icons">home</i></a></li>
                           <li><a href="noticias.php" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a></li>
                           <li><a href="deportistas.php" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
                           <li><a href="contacto.php" class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
-                         <!--Menu para cerrar sesion -->
-                            <li>
-                              <a class='dropdown-trigger' href='#' data-target='dropdown1'>
-                                <i class="material-icons">menu</i>
-                              </a>						
-                              <ul id='dropdown1' class='dropdown-content blue darken-6'>
-                               <li>
-                                <?=$_SESSION['usuario']?>	
-                              </li>
-                              <li class="divider" tabindex="-1"></li>
-                              <li>
-                                <a href="#!">
-                                  <i class="material-icons">person</i>Perfil
-                              </a>
-                            </li>
-                              <li>
-                                <a href="login.php">
-                                  <i class="material-icons">exit_to_app</i>Salir
-                              </a>
-                            </li>
+                          
+
+<?php
+			if($nombreLogin == ""){
+?>
+				<li>
+					<a class="waves-effect waves-light btn modal-trigger red tooltipped" data-position="bottom" data-tooltip="Ingresar" href="#modallogin">Login</a>
+				</li>
+<?php
+			}else{
+?>
+				<li>
+					<a class="waves-effect waves-light btn modal-trigger red tooltipped" data-position="bottom" data-tooltip="Salir" href="#modallogout">Logout</a>
+				</li>
+<?php
+			}
+?>
                       </ul>
               </div>
           </nav>
+          <!--Menu para Iniciar sesion (LOGIN) -->
+					<div id="modallogin" class="modal">
+		<div class="modal-content">
+			<h3>Login</h3>
+			<div class="container">
+				<form action="index.php?" method="POST" class="col s12">
+					<div class="row">
+						<div class="input-field col s12">
+							<input placeholder="Email" id="email" type="email" class="validate" name="txtEmail">
+							<label for="email">Email</label>
+						</div>
+					</div>				
+					<div class="row">
+						<div class="input-field col s12">
+							<input placeholder="Clave" id="clave" type="text" class="validate" name="txtClave">
+							<label for="clave">Clave</label>
+						</div>
+					</div>	
+					<button class="btn waves-effect waves-light" type="submit" >Entrar
+						<i class="material-icons right">send</i>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+  <!--Menu para Cerrar Sesion (LOGOUT) -->
+  <div id="modallogout" class="modal">
+		<div class="modal-content">
+			<h4>Desea cerrar sesion?</h4>
+			<div class="container">
+				<form action="logout.php?" method="POST" class="col s12">
+					<button class="btn waves-effect waves-light red" type="submit" name="accion" value="salir">Salir
+						<i class="material-icons right">send</i>
+					</button>
+					<button class="btn waves-effect waves-light blue darken-5" name="accion" value="nada">Cancelar
+						<i class="material-icons right">cancel</i>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
       <div class="container blue darken-5"></div>
 
 
