@@ -226,7 +226,7 @@
 					</div>
 					<div class="input-field col s6">
 						<select name="txtCategoria">
-							<option value="">Seleccione una opcion</option>
+							<option value="">Seleccione una categoria</option>
 								<?php foreach($listaCategoria as $clave => $valor){
 
 								?>
@@ -235,7 +235,7 @@
 									}
 								?>
 						</select>
-						<label for="genero">Categoria</label>
+						<label for="categoria">Categoria</label>
 					</div>
 				</div>
 
@@ -246,7 +246,7 @@
 					</div>
 					<div class="input-field col s6">
 					<input placeholder="Fecha Publicacion" id="fechaPublicacion" type="date" class="validate" name="txtFechaPublicacion" value="<?=$objNoticias->obtenerFechaPublicacion()?>">
-					<label for="fechaPublicacion">Fecha de Publicacion</label>
+					<label for="fechaPublicacion"></label>
 				</div>
 				</div>
 				<div class="file-field input-field">
@@ -254,6 +254,8 @@
 						<span>Imagen</span>
 						<input type="file" name="imagen" multiple>
 					</div>
+					
+
 					<div class="file-path-wrapper">
 						<input class="file-path validate" type="text" placeholder="Subir un archivo">
 					</div>
@@ -342,14 +344,14 @@
 			<td class="center"><?=$noticias['titulo']?></td>
 			<td class="center"><?=$noticias['categoria']?></td>
 			<td class="center">
-				<a class="waves-effect waves-light btn modal-trigger blue darken-5" href="#modal3">Noticia</a>
-				<div id="modal3" class="modal">
+			<button data-target="<?=$noticias['id']?>" class="btn modal-trigger blue darken-5">Noticia</button>
+				<div id="<?=$noticias['id']?>" class="modal">
 					<div class="modal-content">
 					<h4><b><?=$noticias['titulo']?></b></h4>
 					<p><?=$noticias['noticia']?></p>
 					</div>
 					<div class="modal-footer">
-					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Salir</a>
 					</div>
 				</div>		
 			</td>

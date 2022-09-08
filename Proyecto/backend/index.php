@@ -107,11 +107,7 @@
 							<?=$_SESSION['usuario']?>	
 						</li>
 						<li class="divider" tabindex="-1"></li>
-						<li>
-							<a href="#!">
-								<i class="material-icons">person</i>Perfil
-									</a>
-						</li>
+					
 						<li>
 							<a href="login.php">
 								<i class="material-icons">exit_to_app</i>Salir
@@ -121,6 +117,11 @@
 							
 		</nav>
 		<h2 class="center">Panel de administracion</h2>
+		<div class="container">
+		<a class="waves-effect waves-light btn blue darken-5" href="index.php?r=deportistas">Deportistas</a>
+		<a class="waves-effect waves-light btn blue darken-5" href="index.php?r=noticias">Noticias</a>
+		</div>
+
 		<main>
 			<div class="container">
 				<?php include("router.php"); ?>

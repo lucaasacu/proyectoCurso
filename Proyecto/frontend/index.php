@@ -52,13 +52,7 @@
       $objUsuario->constructor($datos);
       $respuesta = $objUsuario->ingresar();
   
-    }else{
-      $respuesta = array();
-      $respuesta['codigo'] = "Error";
-      $respuesta['mensaje'] = "Error al registrarse";
-      }
-  
-
+    }
 
 
 

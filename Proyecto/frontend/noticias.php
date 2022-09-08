@@ -116,31 +116,6 @@ background-image: url("imagenes/fondo6.png");
                       </ul>
               </div>
           </nav>
-          <!--Menu para Iniciar sesion (LOGIN) -->
-					<div id="modallogin" class="modal">
-		<div class="modal-content">
-			<h3>Login</h3>
-			<div class="container">
-				<form action="index.php?" method="POST" class="col s12">
-					<div class="row">
-						<div class="input-field col s12">
-							<input placeholder="Email" id="email" type="email" class="validate" name="txtEmail">
-							<label for="email">Email</label>
-						</div>
-					</div>				
-					<div class="row">
-						<div class="input-field col s12">
-							<input placeholder="Clave" id="clave" type="text" class="validate" name="txtClave">
-							<label for="clave">Clave</label>
-						</div>
-					</div>	
-					<button class="btn waves-effect waves-light" type="submit" >Entrar
-						<i class="material-icons right">send</i>
-					</button>
-				</form>
-			</div>
-		</div>
-	</div>
   <!--Menu para Cerrar Sesion (LOGOUT) -->
   <div id="modallogout" class="modal">
 		<div class="modal-content">
@@ -260,7 +235,7 @@ background-image: url("imagenes/fondo6.png");
 
   <div class="row">
   <?php
-      foreach($listaNoticias['internacionales'] as $noticias){;
+      foreach($listaNoticias['internacional'] as $noticias){;
   ?>
 <div class="col s12 m6">
 <div class="card">
