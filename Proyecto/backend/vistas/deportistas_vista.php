@@ -186,7 +186,7 @@
 					</div>
 				</div>
 				<div class="file-field input-field">
-					<div class="btn">
+					<div class="btn blue darken-5">
 						<span>Imagen</span>
 						<input type="file" name="imagen" multiple>
 					</div>
@@ -194,7 +194,7 @@
 						<input class="file-path validate" type="text" placeholder="Subir un archivo">
 					</div>
 		    	</div>
-				<button class="btn waves-effect waves-light" type="submit" name="accion" value="ingresar">Enviar
+				<button class="btn waves-effect waves-light blue darken-5" type="submit" name="accion" value="ingresar">Enviar
 					<i class="material-icons right">send</i>
 				</button>
 			</form>
@@ -284,7 +284,7 @@
 					</div>
 				</div>	
 				<div class="file-field input-field">
-					<div class="btn">
+					<div class="btn blue darken-5">
 						<span>Imagen</span>
 						<input type="file" name="imagen" multiple>
 					</div>
@@ -293,7 +293,7 @@
 					</div>
 			    </div>	
 			</div>		
-			<button class="btn waves-effect waves-light" type="submit" name="accion" value="editar">Enviar
+			<button class="btn waves-effect waves-light blue darken-5" type="submit" name="accion" value="editar">Enviar
 				<i class="material-icons right">send</i>
 			</button>
 		</form>

@@ -146,6 +146,8 @@
   background-image: url("imagenes/fondo6.png");
 }
 
+
+
 .card .card-image {
     position: relative;
     border-radius: 35px;
@@ -505,11 +507,10 @@
                   </ul>
               </div>
               <div class="col s6"><img src="imagenes/gif1.gif" class="logoabajo"></div>
-                <ul class="right">
-                  <h5 class="white-text ">Links</h5>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+              <ul class="right">
+                    <li><a class="ex1 text-lighten-3" href="https://nacional.uy" target="_blank">Oficial <i class="material-icons tiny">launch</i></a> </li>
+                    <li><p class="grey-text text-lighten-3">Lucas Acuña</p></li>
+                    <li><p class="grey-text text-lighten-3">© 2022</p></li>
                 </ul>
               </div>
             </div>

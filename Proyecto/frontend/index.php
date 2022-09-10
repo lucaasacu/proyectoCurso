@@ -275,31 +275,31 @@
         <tbody>
           <tr>
             <td><img src="imagenes/logo.png" style="width: 13%">Nacional</td>
-            <td>2</td>
+            <td>0</td>
             <td>:</td>
             <td>0</td>
-            <td><img src="imagenes/cuadros/wanderers.png" style="width: 12%">Wanderers</td>
+            <td><img src="imagenes/cuadros/plazac.png" style="width: 12%">Plaza Colonia</td>
           </tr>
           <tr>
             <td><img src="imagenes/logo.png" style="width: 13%">Nacional</td>
             <td>1</td>
             <td>:</td>
             <td>0</td>
-            <td><img src="imagenes/cuadros/liverpool.png" style="width: 12%">Liverpool</td>
-          </tr>
-          <tr>
-            <td><img src="imagenes/logo.png" style="width: 13%">Nacional</td>
-            <td>0</td>
-            <td>:</td>
-            <td>3</td>
-            <td><img src="imagenes/cuadros/goian.png" style="width: 12%">Atl. Goianiense</td>
+            <td><img src="imagenes/cuadros/miramar.png" style="width: 12%">Miramar Misiones</td>
           </tr>
           <tr>
             <td><img src="imagenes/logo.png" style="width: 13%">Nacional</td>
             <td>3</td>
             <td>:</td>
+            <td>1</td>
+            <td><img src="imagenes/cuadros/penarol.png" style="width: 10%">Peñarol</td>
+          </tr>
+          <tr>
+            <td><img src="imagenes/logo.png" style="width: 13%">Nacional</td>
+            <td>2</td>
+            <td>:</td>
             <td>0</td>
-            <td><img src="imagenes/cuadros/rentistas.png" style="width: 12%">Rentistas</td>
+            <td><img src="imagenes/cuadros/wanderers.png" style="width: 12%">Wanderers</td>
           </tr>
         </tbody>
       </table> 
@@ -336,7 +336,7 @@
     <div class="row">
     <div class="col s12 m11">
       <div class="card-panel white z-depth-1">
-      <h4><b>Un poco de historia</h4>
+      <h4><b>Un poco de historia</b></h4>
       <p class="left-align light">El Club Nacional de Football es una institución deportiva de Uruguay. Fue fundado el 14 de mayo de 1899 en Montevideo, por iniciativa de jóvenes estudiantes de la época, con la intención de consolidar una institución de fútbol para uruguayos criollos frente al predominio de clubes y practicantes extranjeros europeos de este deporte, particularmente ingleses y alemanes, siendo considerado así el "primer equipo criollo" del país y uno de los primeros clubes fundados por nacionales en América. </p>
       </div>
     </div>
@@ -344,7 +344,7 @@
   <div class="row">
     <div class="col s11 m11">
       <div class="card-panel white z-depth-1">
-      <h4><b>Hablando de titulos</h4>
+      <h4><b>Hablando de titulos</b></h4>
       <p class="left-align light">Desde sus orígenes, Nacional ha sido el padre de la gloria del fútbol uruguayo. Con un linaje y una mística ganadora inigualable, Nacional ha conquistado a través de su historia 163 títulos oficiales, que lo definirán en el club más laureado de toda América. Es uno de los equipos mas fuertes del continente con una cantidad de 141 títulos ganados solamente a nivel local y 22 títulos conseguidos a nivel internacional contra grandes equipos de todo el mundo.</p>
       </div>
     </div>
@@ -365,10 +365,9 @@
               </div>
               <div class="col s6"><img src="imagenes/gif1.gif" class="logoabajo"></div>
                 <ul class="right">
-                  <h5 class="white-text ">Links</h5>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="ex1 text-lighten-3" href="https://nacional.uy" target="_blank">Oficial <i class="material-icons tiny">launch</i></a> </li>
+                    <li><p class="grey-text text-lighten-3">Lucas Acuña</p></li>
+                    <li><p class="grey-text text-lighten-3">© 2022</p></li>
                 </ul>
               </div>
             </div>

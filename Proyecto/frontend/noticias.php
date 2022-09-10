@@ -70,7 +70,7 @@
 
       .card .card-image img {
     width: 100%;
-    height: 500px;
+    height: 450px;
 }
 .row .col {
     padding: 2.75rem;
@@ -79,7 +79,13 @@
 
 background-image: url("imagenes/fondo6.png");
 }
+.fondito2{
 
+background-image: url("imagenes/fondito2.png");
+background-repeat: no-repeat;
+  background-position: 20% 50%;
+  background-size: cover;
+}
 
 
 </style>
@@ -136,8 +142,13 @@ background-image: url("imagenes/fondo6.png");
 
 
 <!--NOTICIAS JUGADORES-->
-
-  <h1 class="center white"><b>Jugadores</b></h1>
+<main>
+  <div class="section white fondito2" style="padding-top: 40rem;">
+  <h1 class="center white-text" style="margin: -315px; font-size:70px;"><b>NOTICIAS DEL CLUB</b></h1>
+</div>
+  <div class="container red" style="width: 20%;">
+  <h1 class="center white-text"><b>Jugadores</b></h1>
+  </div>
   <br><br>
 
   <div class="row">
@@ -170,8 +181,10 @@ background-image: url("imagenes/fondo6.png");
 
   <!--NOTICIAS RESULTADOS-->
 
-  <h1 class="center white"><b>Resultados</b></h1>
-  <br><br>
+  <div class="container red" style="width: 20%;">
+  <h1 class="center white-text"><b>Resultados</b></h1>
+  </div>
+  <br><br>>
 
   <div class="row">
   <?php
@@ -189,6 +202,7 @@ background-image: url("imagenes/fondo6.png");
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">close</i></span>
       <p><?=$noticias['noticia']?></p>
+      <p><a class="red-text"><?=$noticias['fechapublicacion']?></a></p>
     </div>
   </div>
   </div>
@@ -197,17 +211,20 @@ background-image: url("imagenes/fondo6.png");
   }
   ?>
   </div>
+  </div>
 
   <!--NOTICIAS MERCADO-->
 
-  <h1 class="center white"><b>Mercado</b></h1>
+  <div class="container red" style="width: 20%;">
+  <h1 class="center white-text"><b>Mercado</b></h1>
+  </div>
   <br><br>
 
   <div class="row">
   <?php
       foreach($listaNoticias['mercado'] as $noticias){;
   ?>
-<div class="col s12 m6">
+<div class="col s12 m5">
 <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator" style="margin: 0 0;" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
@@ -219,6 +236,7 @@ background-image: url("imagenes/fondo6.png");
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">close</i></span>
       <p><?=$noticias['noticia']?></p>
+      <p><a class="red-text"><?=$noticias['fechapublicacion']?></a></p>
     </div>
   </div>
   </div>
@@ -227,17 +245,20 @@ background-image: url("imagenes/fondo6.png");
   }
   ?>
   </div>
+  </div>
 
   <!--NOTICIAS INTERNACIONALES-->
 
-  <h1 class="center white"><b>Internacionales</b></h1>
+  <div class="container red" style="width: 20%;">
+  <h1 class="center white-text"><b>Internacional</b></h1>
+  </div>
   <br><br>
 
   <div class="row">
   <?php
       foreach($listaNoticias['internacional'] as $noticias){;
   ?>
-<div class="col s12 m6">
+<div class="col s12 m5">
 <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator" style="margin: 0 0;" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
@@ -249,6 +270,7 @@ background-image: url("imagenes/fondo6.png");
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">close</i></span>
       <p><?=$noticias['noticia']?></p>
+      <p><a class="red-text"><?=$noticias['fechapublicacion']?></a></p>
     </div>
   </div>
   </div>
@@ -257,17 +279,20 @@ background-image: url("imagenes/fondo6.png");
   }
   ?>
   </div>
+  </div>
 
   <!--NOTICIAS SOCIALES-->
 
-  <h1 class="center white"><b>Sociales</b></h1>
+  <div class="container red" style="width: 20%;">
+  <h1 class="center white-text"><b>Sociales</b></h1>
+  </div>
   <br><br>
 
   <div class="row">
   <?php
       foreach($listaNoticias['sociales'] as $noticias){;
   ?>
-<div class="col s12 m6">
+<div class="col s12 m5">
 <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator" style="margin: 0 0;" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
@@ -279,6 +304,7 @@ background-image: url("imagenes/fondo6.png");
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">close</i></span>
       <p><?=$noticias['noticia']?></p>
+      <p><a class="red-text"><?=$noticias['fechapublicacion']?></a></p>
     </div>
   </div>
   </div>
@@ -287,8 +313,9 @@ background-image: url("imagenes/fondo6.png");
   }
   ?>
   </div>
+  </div>
 
-  <main></main>
+  </main>
   <!--Footer-->
 <footer class="page-footer blue darken-6">
           <div class="container">
@@ -302,11 +329,10 @@ background-image: url("imagenes/fondo6.png");
                   </ul>
               </div>
               <div class="col s6"><img src="imagenes/gif1.gif" class="logoabajo"></div>
-                <ul class="right">
-                  <h5 class="white-text ">Links</h5>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+              <ul class="right">
+                    <li><a class="ex1 text-lighten-3" href="https://nacional.uy" target="_blank">Oficial <i class="material-icons tiny">launch</i></a> </li>
+                    <li><p class="grey-text text-lighten-3">Lucas Acuña</p></li>
+                    <li><p class="grey-text text-lighten-3">© 2022</p></li>
                 </ul>
               </div>
             </div>
