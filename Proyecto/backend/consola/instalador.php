@@ -17,16 +17,18 @@
 		public function instalar(){
 
 			$arraySQL = array();
+// CREAR BASE DE DATOS
+			$arraySQL[] = "CREATE DATABASE baselucas;)";
+
 			$arraySQL[] = "
 					SET FOREIGN_KEY_CHECKS=0;
-					DROP TABLE alumnos;
-					DROP TABLE tiposcursos;
-					DROP TABLE profesores;
-					DROP TABLE cursos;
-					DROP TABLE alumnos_cursos;
+					DROP TABLE deportistas;
+					DROP TABLE usuarios;
+					DROP TABLE noticias;
+					DROP TABLE administradores;
 					SET FOREIGN_KEY_CHECKS=0;
 			";
-
+			
 // CREAR TABLA USUARIOS
 			$arraySQL[] = "CREATE TABLE `usuarios` (
 				`id` int(5) NOT NULL AUTO_INCREMENT,
