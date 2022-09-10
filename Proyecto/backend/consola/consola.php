@@ -17,10 +17,10 @@ class consola{
 		*/
 		include("configuracion/configuracion.php");
 
-		$host 		= $BDMYSQL['host'];
-		$dbName 	= $BDMYSQL['dbName'];
-		$user 		= $BDMYSQL['user'];
-		$password 	= $BDMYSQL['password'];
+		$host 		= $CONFIG['host'];
+		$dbName 	= $CONFIG['dbName'];
+		$user 		= $CONFIG['user'];
+		$password 	= $CONFIG['password'];
 		$options = [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 			PDO::ATTR_CASE => PDO::CASE_NATURAL,
@@ -38,16 +38,13 @@ class consola{
 	} 
 
 	public function ejecutarConsulta($sql, $arrayData = array()){
-		/*
-			$sql = Es la consulta contra la base de datos
-			$arrayDatos = son los datos que van por parametro en la consulta
-		*/
+
 		include("configuracion/configuracion.php");
 
-		$host 		= $BDMYSQL['host'];
-		$dbName 	= $BDMYSQL['dbName'];
-		$user 		= $BDMYSQL['user'];
-		$password 	= $BDMYSQL['password'];
+		$host 		= $CONFIG['host'];
+		$dbName 	= $CONFIG['dbName'];
+		$user 		= $CONFIG['user'];
+		$password 	= $CONFIG['password'];
 		$options = [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 			PDO::ATTR_CASE => PDO::CASE_NATURAL,
