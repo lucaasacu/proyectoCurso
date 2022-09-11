@@ -158,7 +158,7 @@ background-repeat: no-repeat;
 <div class="col s12 m5">
 <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" style="margin: 0 0;" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
+      <img class="activator" style="margin: 0 0;" src="http://localhost/LucasAcuna/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">more_vert</i></span>
@@ -193,7 +193,7 @@ background-repeat: no-repeat;
 <div class="col s12 m5">
 <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" style="margin: 0 0;" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
+      <img class="activator" style="margin: 0 0;" src="http://localhost/LucasAcuna/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">more_vert</i></span>
@@ -227,7 +227,7 @@ background-repeat: no-repeat;
 <div class="col s12 m5">
 <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" style="margin: 0 0;" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
+      <img class="activator" style="margin: 0 0;" src="http://localhost/LucasAcuna/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">more_vert</i></span>
@@ -261,7 +261,7 @@ background-repeat: no-repeat;
 <div class="col s12 m5">
 <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" style="margin: 0 0;" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
+      <img class="activator" style="margin: 0 0;" src="http://localhost/LucasAcuna/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">more_vert</i></span>
@@ -295,7 +295,7 @@ background-repeat: no-repeat;
 <div class="col s12 m5">
 <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" style="margin: 0 0;" src="http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
+      <img class="activator" style="margin: 0 0;" src="http://localhost/LucasAcuna/Proyecto/backend/archivos/imagenes/<?=$noticias['imagen']?>">
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4"><?=$noticias['titulo']?><i class="material-icons right">more_vert</i></span>

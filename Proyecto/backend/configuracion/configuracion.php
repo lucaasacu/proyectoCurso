@@ -3,7 +3,7 @@
 
 	$CONFIG = array(
 		"host" 		=> "localhost",
-		"dbName" 	=> "prueba1",
+		"dbName" 	=> "baselucas",
 		"user" 		=> "root",
 		"password" 	=> "",
 	);

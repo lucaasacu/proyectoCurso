@@ -352,7 +352,7 @@
 
     <div class="col s4 m3">
       <div class="card"> 
-        <div class="card-image activator puntero" style="background-image: url('http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$deportistas['imagen']?>');">
+        <div class="card-image activator puntero" style="background-image: url('http://localhost/LucasAcuna/Proyecto/backend/archivos/imagenes/<?=$deportistas['imagen']?>');">
           <span class="card-title red"><?=$deportistas['numero']?></span>
         </div>
         <div class="card-content ">
@@ -391,7 +391,7 @@
 
     <div class="col s4 m3">
       <div class="card"> 
-        <div class="card-image activator puntero" style="background-image: url('http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$deportistas['imagen']?>');">
+        <div class="card-image activator puntero" style="background-image: url('http://localhost/LucasAcuna/Proyecto/backend/archivos/imagenes/<?=$deportistas['imagen']?>');">
           <span class="card-title red"><?=$deportistas['numero']?></span>
         </div>
         <div class="card-content">
@@ -429,7 +429,7 @@
 
     <div class="col s4 m3">
       <div class="card"> 
-        <div class="card-image activator puntero" style="background-image: url('http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$deportistas['imagen']?>');">
+        <div class="card-image activator puntero" style="background-image: url('http://localhost/LucasAcuna/Proyecto/backend/archivos/imagenes/<?=$deportistas['imagen']?>');">
           <span class="card-title red"><?=$deportistas['numero']?></span>
         </div>
         <div class="card-content">
@@ -467,7 +467,7 @@
 
     <div class="col s4 m3">
       <div class="card"> 
-        <div class="card-image activator puntero" style="background-image: url('http://localhost/proyectoCurso/Proyecto/backend/archivos/imagenes/<?=$deportistas['imagen']?>');">
+        <div class="card-image activator puntero" style="background-image: url('http://localhost/LucasAcuna/Proyecto/backend/archivos/imagenes/<?=$deportistas['imagen']?>');">
           <span class="card-title red"><?=$deportistas['numero']?></span>
         </div>
         <div class="card-content">
