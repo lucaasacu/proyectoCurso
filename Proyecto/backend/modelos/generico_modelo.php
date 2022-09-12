@@ -54,14 +54,12 @@ class generico_modelo{
 			$retorno = $preparo->execute($arrayData);
 
 		}catch(Exception $e){
-			// En caso que de error imprimimos en pantalla el error 
-			// Y retornamos un false
+
 			print_r($e->getMessage());				
 			$retorno = false;
 
 		}catch(PDOException $ePDO){
-			// En caso que de error imprimimos en pantalla el error 
-			// Y retornamos un false
+
 			print_r($ePDO->getMessage());
 			$retorno = false;
 		}
@@ -70,7 +68,7 @@ class generico_modelo{
 
 	} 
 	public function subirImagen($rArchivo,$rAlto,$rAncho){
-		//$rArchivo = $_FILE[(Y el name de input file)];
+
 		$archivo = $rArchivo;
 		$rutaTMP = $rArchivo['tmp_name'];
 

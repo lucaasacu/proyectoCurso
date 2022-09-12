@@ -1,7 +1,4 @@
 <?php
-	//echo("Estoy iniciando mi proyecto");
-	//phpinfo();
-
 
 	@session_start();
 
@@ -10,7 +7,6 @@
 	}else{
 		header("Location:login.php");
 	}
-
 
 ?>
 
@@ -116,6 +112,7 @@
 					</ul>
 							
 		</nav>
+<!--TITULO Y BOTONES-->
 		<h2 class="center">Panel de administracion</h2>
 		<div class="container">
 		<a class="waves-effect waves-light btn blue darken-5" href="index.php?r=deportistas">Deportistas</a>

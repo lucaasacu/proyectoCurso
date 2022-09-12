@@ -13,7 +13,7 @@
 
 		}else{
 
-			echo("<h1>Bienvenidos a MiPanel</h1>");
+			echo("<h1>Bienvenidos al panel de administracion de la pagina</h1>");
 		}
 	}
 

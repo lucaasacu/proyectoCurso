@@ -205,16 +205,16 @@
 </div>
 
 
-<!-- Funcionamiento -->		
+<!-- Mensajes de Ok o de Error -->		
 
 
-<?PHP 
+<?php 
 	if(isset($respuesta['codigo']) && $respuesta['codigo'] == "Error"  ){
 ?>
 	<div class="red darken-3 center-align">	
 		<h3><?=$respuesta['mensaje']?></h3>
 	</div>
-<?PHP
+<?php
 	}
 ?>
 <?php

@@ -1,6 +1,5 @@
 <?php
 
-
 	require_once("modelos/generico_modelo.php");
 	class deportistas_modelo extends generico_modelo{
 
@@ -240,6 +239,7 @@
 			return $totalPaginas;
 
 		}
+// Funcion para listar el genero
 		public function listaTipoGenero(){
 
 			$arrayGenero = array();
@@ -249,7 +249,7 @@
 			return $arrayGenero;
 	
 		}
-
+// Funcion para listar la posicion
 		public function listaPos(){
 
 			$arrayPos = array();

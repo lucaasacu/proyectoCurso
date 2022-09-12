@@ -28,7 +28,6 @@
 		session_destroy();
 	}
 
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -79,8 +78,6 @@
 			.row{
 				margin-bottom:10%;
 			}
-
-
 		</style>
 	</head>
 	<body>

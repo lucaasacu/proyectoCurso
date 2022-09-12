@@ -220,7 +220,7 @@
 			return $totalPaginas;
 
 		}
-
+// Funcion para listar por categoria
 		public function listaCategorias(){
 
 			$arrayCategoria = array();

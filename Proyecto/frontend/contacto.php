@@ -48,6 +48,7 @@
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="../backend/web/css/materialize.css"  media="screen,projection"/>
       <link type="text/css" rel="stylesheet" href="../backend/web/estilo.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/contacto.css"  media="screen,projection"/>
       <!--Iconos w3-->
       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -57,60 +58,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>CONTACTO</title>
       <link rel="icon" href="imagenes/logo.png">
-          <style>
-    .row .col.m11 {
-    width: 91.6666666667%;
-    margin-left: auto;
-    left: auto;
-    margin: 30px;
-    right: auto;
-}
-
-          .fa {
-        display: inline-table;
-        font: normal normal normal 14px/1 FontAwesome;
-        font-size: 24px;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        }
-        /*Texto rojo cuando pasas el mouse*/
-                a.ex1:hover, a.ex1:active {color: red;}
-                
-        /*Tabla de perfil/cerrar sesion*/
-        .dropdown-content li {
-            color: white;
-            text-align: center;
-        }
-        .dropdown-content li>a, .dropdown-content li>span {
-            color: white;
-        }
-        .dropdown-content li>a>i {
-          height: inherit;
-            line-height: inherit;
-            float: left;
-            margin: 0 0px 0px 20px;
-        }
-        .card-panel {
-    border-radius: 14px;
-    border-bottom: 7px solid red;
-      }
-      td{
-        padding: 15px 0px;
-        padding-left: 35px;
-      }
-      .fon{
-        background-color:red;
-      }
-
-.rojo{
+<style>
+  .rojo{
   background-image: url('imagenes/nacional3.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
-
-        
 </style>
 </head>
 <body class="rojo">
@@ -259,7 +213,16 @@
       </div>
     </form>
   </div>
-
+  <div class="container center">
+    <h2 class="blue-text white"  style="border-radius: 10px; margin: 0 280px; padding: 10px;">Siguenos a través de nuestras redes sociales!</h2>
+    <br>
+  <button class="btn waves-effect waves-light white blue-text" style="border-radius: 30px;" type="submit" name="action"><a target="_blank" href="https://www.facebook.com/nacional/">Facebook</a>
+     </button>
+     <button class="btn waves-effect waves-light white blue-text" style="border-radius: 30px;" type="submit" name="action"><a target="_blank" href="https://twitter.com/Nacional">Twitter</a>
+     </button>
+     <button class="btn waves-effect waves-light white blue-text" style="border-radius: 30px;" type="submit" name="action"><a target="_blank" href="https://www.instagram.com/nacional/?hl=es">Instagram</a>
+     </button>
+     </div>
   <?php 
 	if(isset($respuesta['codigo']) && $respuesta['codigo'] == "Error"  ){
 ?>
@@ -282,14 +245,9 @@
   <main></main>
   <!--Footer-->
 <footer class="page-footer blue darken-6">
-
-                      <a href="https://www.facebook.com/nacional/" class="fa fa-facebook"></a>
-                      <a href="https://twitter.com/Nacional" class="fa fa-twitter blue"></a>
-                      <p class="grey-text text-lighten-3 right" style="margin: 0 20px;">Lucas Acuña</p>
-                      <a class="ex1 text-lighten-3 right" href="https://nacional.uy" target="_blank">Oficial Web<i class="material-icons tiny">launch</i></a>
-                      
-                      <a href="https://www.instagram.com/nacional/?hl=es" class="fa fa-instagram"></a>
-
+  <div class="container center" style="padding-bottom: 10px;">
+                      <p class="grey-text text-lighten-3" style="margin: 0 20px;">Lucas Acuña © 2022</p>
+                      <a class="ex1 text-lighten-3" href="https://nacional.uy" target="_blank">Oficial Web<i class="material-icons tiny">launch</i></a></div>
 </footer>
   <!--Scripts-->
   <script type="text/javascript" src="../backend/web/js/materialize.min.js"></script>
