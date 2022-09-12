@@ -99,20 +99,31 @@ background-repeat: no-repeat;
                       <ul class="right hide-on-med-and-down">
                           <li><?= $nombreLogin ?></li>
                           <li><a href="index.php" class="tooltipped" data-position="bottom" data-tooltip="Inicio"><i class="material-icons">home</i></a></li>
-                          <li><a href="noticias.php" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a></li>
                           <li><a href="deportistas.php" class="tooltipped" data-position="bottom" data-tooltip="Deportistas"><i class="material-icons">people</i></a></li>
-                          <li><a href="contacto.php" class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a></li>
-                          
-
+                        
+  <!--++++++ Validacion de usuario ++++++-->
 <?php
 			if($nombreLogin == ""){
 ?>
+        <li>
+          <a  class="tooltipped" data-position="bottom" data-tooltip="Debes estar logeado para ver las noticias"><i class="material-icons">language</i></a>
+        </li>
+        <li>
+          <a href="contacto.php" class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a>
+        </li>
 				<li>
 					<a class="waves-effect waves-light btn modal-trigger red tooltipped" data-position="bottom" data-tooltip="Ingresar" href="#modallogin">Login</a>
 				</li>
+
 <?php
 			}else{
 ?>
+<li>
+          <a href="noticias.php" class="tooltipped" data-position="bottom" data-tooltip="Noticias"><i class="material-icons">language</i></a>
+        </li>
+        <li>
+          <a href="contacto.php" class="tooltipped" data-position="bottom" data-tooltip="Contacto" ><i class="material-icons">call</i></a>
+        </li>
 				<li>
 					<a class="waves-effect waves-light btn modal-trigger red tooltipped" data-position="bottom" data-tooltip="Salir" href="#modallogout">Logout</a>
 				</li>
@@ -126,6 +137,7 @@ background-repeat: no-repeat;
   <div id="modallogout" class="modal" style="width: 20%; border-radius: 20px;">
 		<div class="modal-content center">
 			<h4>Desea cerrar sesion?</h4>
+      <h6 class="red-text">*Recuerde que volvera al menu y no tendra acceso a las noticias*</h6>
 			<div class="container">
 				<form action="logout.php?" method="POST" class="col s12">
 					<button class="btn waves-effect waves-light red" type="submit" name="accion" value="salir">Salir
