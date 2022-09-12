@@ -9,7 +9,7 @@
   @session_start();
 
   if((!isset($_SESSION['emailUsuario']) || $_SESSION['emailUsuario']=="") || (!isset($_SESSION['nomUsuario'])|| $_SESSION['nomUsuario']=="")){
-
+    
     include"logout.php";
   }
 
@@ -123,8 +123,8 @@ background-repeat: no-repeat;
               </div>
           </nav>
   <!--Menu para Cerrar Sesion (LOGOUT) -->
-  <div id="modallogout" class="modal">
-		<div class="modal-content">
+  <div id="modallogout" class="modal" style="width: 20%; border-radius: 20px;">
+		<div class="modal-content center">
 			<h4>Desea cerrar sesion?</h4>
 			<div class="container">
 				<form action="logout.php?" method="POST" class="col s12">
@@ -358,5 +358,8 @@ background-repeat: no-repeat;
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+  <script>function alertaLog() {
+  alert("Necesitas logearte para ver las noticias");
+}</script>
   </body>
 </html>

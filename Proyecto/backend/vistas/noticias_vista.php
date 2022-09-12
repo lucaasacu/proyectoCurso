@@ -33,7 +33,6 @@
 //Editar (Constructor)
 	if(isset($_POST["accion"]) && $_POST['accion'] == "editar" ){
 		
-		print_r($_FILES);
 
 		$datos = array();
 		$datos['id'] 							= isset($_POST['txtId'])?$_POST['txtId']:"";		
@@ -159,7 +158,7 @@
 				</div>
 				</div>
 				<div class="file-field input-field">
-					<div class="btn">
+					<div class="btn blue darken-5">
 						<span>Imagen</span>
 						<input type="file" name="imagen" multiple>
 					</div>
@@ -167,7 +166,7 @@
 						<input class="file-path validate" type="text" placeholder="Subir un archivo">
 					</div>
 		    	</div>
-				<button class="btn waves-effect waves-light" type="submit" name="accion" value="ingresar">Enviar
+				<button class="btn waves-effect waves-light blue darken-5" type="submit" name="accion" value="ingresar">Enviar
 					<i class="material-icons right">send</i>
 				</button>
 			</form>
@@ -185,7 +184,7 @@
 <?php
 	if(isset($respuesta['codigo']) && $respuesta['codigo'] == "Error"  ){
 ?>
-	<div class="red center-align">	
+	<div class="red darken-3 center-align">	
 		<h3><?=$respuesta['mensaje']?></h3>
 	</div>
 <?php
@@ -194,7 +193,7 @@
 <?php
 	if(isset($respuesta['codigo']) && $respuesta['codigo'] == "OK"  ){
 ?>
-	<div class="green center-align">	
+	<div class="green lighten-2 center-align">	
 		<h3><?=$respuesta['mensaje']?></h3>
 	</div>
 <?php
@@ -250,7 +249,7 @@
 				</div>
 				</div>
 				<div class="file-field input-field">
-					<div class="btn">
+					<div class="btn blue darken-5">
 						<span>Imagen</span>
 						<input type="file" name="imagen" multiple>
 					</div>
@@ -260,7 +259,7 @@
 						<input class="file-path validate" type="text" placeholder="Subir un archivo">
 					</div>
 		    	</div>
-				<button class="btn waves-effect waves-light" type="submit" name="accion" value="editar">Enviar
+				<button class="btn waves-effect waves-light blue darken-5" type="submit" name="accion" value="editar">Enviar
 					<i class="material-icons right">send</i>
 				</button>
 			</form>
@@ -299,19 +298,19 @@
 		<tr>
 			<th class="" colspan=4>
 				<div class="left">
-					<a class="waves-effect waves-light btn modal-trigger blue darken-4" href="#modal1">
+					<a class="waves-effect waves-light btn modal-trigger blue darken-5" href="#modal1">
 						<i class="material-icons left">group_add</i>Ingresar
 					</a>
 				</div>
 				<div class="right">
-					<a class="waves-effect waves-light btn modal-trigger blue darken-4" href="index.php?r=<?=$rutaPagina?>">
+					<a class="waves-effect waves-light btn modal-trigger blue darken-5" href="index.php?r=<?=$rutaPagina?>">
 						<i class="material-icons left">restore</i>Reset
 					</a>
 				</div>
 			</th>
 			<th class="center" colspan=4>
 				<nav>
-					<div class="nav-wrapper blue darken-4">
+					<div class="nav-wrapper blue darken-5">
 						<form action="index.php?r=<?=$rutaPagina?>" method="POST" >
 							<div class="input-field">
 								<input id="search" type="search" name="buscador" required>
@@ -375,7 +374,7 @@
 	}
 ?>
 <!-- BUSCAR -->
-		<tr class="blue darken-4">
+		<tr class="blue darken-5">
 			<td colspan="7">
 				<ul class="pagination center">
 					<li class="waves-effect">

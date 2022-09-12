@@ -1,0 +1,69 @@
+##Bienvenido al manual de usuario de mi página web.##
+PARA REALIZAR EL MER Y LA NORMALIZACION UTILICE UNA EXTENSION LLAMADA DRAWIO EN VISUAL STUDIO CODE.
+Lucas Acuña 12/9/2022
+
+
+Para poder visualizar de manera correcta y hacer uso de todo el entorno tendrá que realizar una serie de pasos y tener ciertos cuidados.
+
+
+IMPORTANTE: SI VA A CAMBIAR EL NOMBRE DE LA CARPETA RAIZ (LucasAcuna) LUEGO TENDRÁ QUE CAMBIAR RUTAS EN VARIAS PARTES DEL CODIGO PRINCIPAL DE LA PAGINA
+#####(se explica al final)#####
+SI LA DEJA COMO ESTÁ FUNCIONARÁ SIN PROBLEMAS. 
+
+1) Para crear la base de datos tiene que ir al dbeaver, conectarse a localhost y en un script ejecutar los siguientes comandos.
+Aclaración: La base de datos se llama “baselucas”, si quiere cambiar esto tendrá que realizar cambios en el código, esta parte la dejé fuera del instalador por si acaso.
+•	CREATE DATABASE baselucas; 
+•	USE baselucas;
+
+Una vez que haya creado esta base puede ejecutar el instalador para que la base se instale.
+
+2)	Ya teniendo la base de datos creada, podremos ejecutar el instalador.
+Con el proyecto abierto en visual code, nos dirigimos a la terminal y nos ubicamos en la carpeta backend 
+“C:\laragon\www\LucasAcuna\Proyecto\backend” 
+Y ahí ejecutamos el comando php “php .\cron.php instalar”
+
+Eso nos va a instalar toda la base de datos y ya podremos acceder al proyecto.
+Por si acaso fijarse en los archivos configuración.php tanto de frontend como de backend para asegurar que la base de datos sea la correcta.
+
+DE TENER PROBLEMAS EJECUTANDO EL INSTALADOR SE ENCUENTRA EL DUMP DE LA BASE PARA PODER INSTALARLA MANUALMENTE.
+
+##########-BACKEND-##########
+http://localhost/LucasAcuna/Proyecto/backend
+
+Para acceder al backend tendremos que logearnos con una de las tres cuentas de administradores, están en el archivo cuentasprueba.txt => http://localhost/LucasAcuna/Proyecto/documentacion/cuentasprueba.txt
+Una vez adentro tenemos el panel de administración de la web abierto, podemos acceder a administrar las noticias o los deportistas.
+En este panel podremos ingresar, editar y borrar nuestros deportistas asi como verlos listados con sus datos y las fotos. 
+Igual que con las noticias.
+
+
+
+##########-FRONTEND-##########
+http://localhost/LucasAcuna/Proyecto/frontend/
+
+En el frontend vamos a tener una web amigable con una pagina principal y paginas secundarias para ver información.
+Vamos a poder ver a los deportistas del club, leer un poco de historia y una vista general del sitio.
+Tenemos una sección de noticias pero requiere que iniciemos sesión en la pagina para poder verlas.
+
+Haciendo clic en el botón que dice “Login” podremos iniciar sesión con una de las dos cuentas de prueba que se encuentran en el archivo cuentasprueba.txt => http://localhost/LucasAcuna/Proyecto/documentacion/cuentasprueba.txt
+
+Tenemos un botón que se llama “registrate” con el que accedemos a un formulario de registro, completamos nuestros datos y damos a enviar. 
+Luego podremos acceder y logearnos en la página con estos datos.
+
+Ahí ya tendremos acceso completo a las noticias, podemos verlas y leerlas haciendo clic en ellas. 
+
+##########-CUIDADOS A TENER Y CIERTAS ACLARACIONES DEL PROYECTO-##########
+•	Yo ejecute MySQL en el puerto 3306 por lo que no sé qué ocurriría con otros puertos y su relación con el instalador.
+
+•	Decidí dejar la creación de base por fuera del instalador por las dudas de que diera algún problema.
+
+•	Es muy recomendable que la base tenga el charset UTF-8 ya que los jugadores y las noticias se ingresaran de mala manera de no ser así, ya que se corrompen tildes, letras Ñ, acentuaciones y demás símbolos. 
+Para eso podemos ejecutar este comando antes de ejecutar el instalador->
+“ALTER database baselucas
+DEFAULT CHARSET=utf8;”
+
+SI CAMBIA EL NOMBRE DE LA CARPETA RAIZ DEL PROYECTO TENDRA QUE CAMBIARLO TAMBIEN EN CADA LINEA QUE HAGA REFERENCIA A MOSTRAR UNA IMAGEN, TANTO EN FRONTEND/DEPORTISTAS COMO EN FRONTEND/NOTICIAS
+Son varias líneas a las que habría que realizarle este cambio para que se vea bien. RECOMEDABLE DEJAR LA CARPETA COMO “LucasAcuna”.
+
+
+
+Otra cosa recomendable es trabajar con la base de datos llamándola “baselucas” ya que así esta configurado, de cambiar este nombre también se deberá cambiar en los archivos configuración.php tanto del backend como del frontend.

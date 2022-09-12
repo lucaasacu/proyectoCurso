@@ -193,8 +193,8 @@
     </nav>
 
 <!--Menu para Iniciar sesion (LOGIN) -->
-					<div id="modallogin" class="modal">
-		<div class="modal-content">
+					<div id="modallogin" class="modal" style="width: 25%; border-radius: 20px;">
+		<div class="modal-content center">
 			<h3>Login</h3>
 			<div class="container">
 				<form action="index.php?" method="POST" class="col s12">
@@ -212,7 +212,7 @@
 					</div>	
 					<button class="btn waves-effect waves-light red" type="submit" >Entrar
 						<i class="material-icons right">send</i>
-					</button>
+					</button> <br><br>
           <div class="container center">
           <h4>No tienes cuenta?</h4>
           <a class="waves-effect waves-light btn modal-trigger red tooltipped" data-position="bottom" data-tooltip="Salir" href="#modalregister">Registrate</a>
@@ -222,8 +222,8 @@
 		</div>
 	</div>
   <!--Menu para Cerrar Sesion (LOGOUT) -->
-  <div id="modallogout" class="modal">
-		<div class="modal-content">
+  <div id="modallogout" class="modal" style="width: 20%; border-radius: 20px;">
+		<div class="modal-content center">
 			<h4>Desea cerrar sesion?</h4>
 			<div class="container">
 				<form action="logout.php?" method="POST" class="col s12">
@@ -238,8 +238,8 @@
 		</div>
 	</div>
   <!--Menu para Registrarse -->
-					<div id="modalregister" class="modal">
-		<div class="modal-content">
+					<div id="modalregister" class="modal" style="width: 40%; border-radius: 20px;">
+		<div class="modal-content center">
 			<h3 class="center">Registrarse</h3>
 			<div class="container">
 				<form action="index.php?" method="POST" class="col s12">
@@ -275,7 +275,7 @@
   <?php 
 	if(isset($respuesta['codigo']) && $respuesta['codigo'] == "Error"  ){
 ?>
-	<div class="red center-align">	
+	<div class="red darken-3 center-align">	
 		<h3><?=$respuesta['mensaje']?></h3>
 	</div>
 <?php
@@ -284,54 +284,14 @@
 <?php
 	if(isset($respuesta['codigo']) && $respuesta['codigo'] == "OK"  ){
 ?>
-	<div class="green center-align">	
+	<div class="green lighten-2 center-align">	
 		<h3><?=$respuesta['mensaje']?></h3>
 	</div>
 <?php
 	}
 ?>
 
-<!--Menu para Iniciar sesion (LOGIN) -->
-					<div id="modallogin" class="modal">
-		<div class="modal-content">
-			<h3>Login</h3>
-			<div class="container">
-				<form action="index.php?" method="POST" class="col s12">
-					<div class="row">
-						<div class="input-field col s12">
-							<input placeholder="Email" id="email" type="email" class="validate" name="txtEmail">
-							<label for="email">Email</label>
-						</div>
-					</div>				
-					<div class="row">
-						<div class="input-field col s12">
-							<input placeholder="Clave" id="clave" type="text" class="validate" name="txtClave">
-							<label for="clave">Clave</label>
-						</div>
-					</div>	
-					<button class="btn waves-effect waves-light" type="submit" >Entrar
-						<i class="material-icons right">send</i>
-					</button>
-				</form>
-			</div>
-		</div>
-	</div>
-  <!--Menu para Cerrar Sesion (LOGOUT) -->
-  <div id="modallogout" class="modal">
-		<div class="modal-content">
-			<h4>Desea cerrar sesion?</h4>
-			<div class="container">
-				<form action="logout.php?" method="POST" class="col s12">
-					<button class="btn waves-effect waves-light red" type="submit" name="accion" value="salir">Salir
-						<i class="material-icons right">send</i>
-					</button>
-					<button class="btn waves-effect waves-light blue darken-5" name="accion" value="nada">Cancelar
-						<i class="material-icons right">cancel</i>
-					</button>
-				</form>
-			</div>
-		</div>
-	</div>
+
           </nav>
       <div class="container blue darken-5"></div>
 <br>

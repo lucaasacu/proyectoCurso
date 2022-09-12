@@ -1,0 +1,26 @@
+Frontend - Web
+
+Cuenta prueba 1:
+email: prueba@gmail.com
+clave: 1234
+
+Cuenta prueba 2:
+email: cursophp@hotmail.com
+clave: php123
+
+
+Backend - Panel de administracion
+
+Cuenta prueba 1:
+nombre: admin
+clave: clave
+
+Cuenta prueba 2:
+nombre: php1234
+clave: php1234
+
+Cuenta prueba 3:
+nombre: curso
+clave: curso
+
+

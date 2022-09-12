@@ -34,8 +34,7 @@
 
 //Editar (Constructor)
 	if(isset($_POST["accion"]) && $_POST['accion'] == "editar" ){
-		
-		print_r($_FILES);
+
 
 		$datos = array();
 		$datos['numero'] 			= isset($_POST['txtNumero'])?$_POST['txtNumero']:"";		
@@ -212,7 +211,7 @@
 <?PHP 
 	if(isset($respuesta['codigo']) && $respuesta['codigo'] == "Error"  ){
 ?>
-	<div class="red center-align">	
+	<div class="red darken-3 center-align">	
 		<h3><?=$respuesta['mensaje']?></h3>
 	</div>
 <?PHP
@@ -221,8 +220,8 @@
 <?php
 	if(isset($respuesta['codigo']) && $respuesta['codigo'] == "OK"  ){
 ?>
-	<div class="green center-align">	
-		<h3><?=$respuesta['mensaje']?></h3>
+	<div class="green lighten-2 center-align">	
+		<h3 class="white-text"><?=$respuesta['mensaje']?></h3>
 	</div>
 <?php
 	}
@@ -329,19 +328,19 @@
 		<tr>
 			<th class="" colspan=7>
 				<div class="left">
-					<a class="waves-effect waves-light btn modal-trigger blue darken-4" href="#modal1">
+					<a class="waves-effect waves-light btn modal-trigger blue darken-5" href="#modal1">
 						<i class="material-icons left">group_add</i>Ingresar
 					</a>
 				</div>
 				<div class="right">
-					<a class="waves-effect waves-light btn modal-trigger blue darken-4" href="index.php?r=<?=$rutaPagina?>">
+					<a class="waves-effect waves-light btn modal-trigger blue darken-5" href="index.php?r=<?=$rutaPagina?>">
 						<i class="material-icons left">restore</i>Reset
 					</a>
 				</div>
 			</th>
 			<th class="center" colspan=4>
 				<nav>
-					<div class="nav-wrapper blue darken-4">
+					<div class="nav-wrapper blue darken-5">
 						<form action="index.php?r=<?=$rutaPagina?>" method="POST" >
 							<div class="input-field">
 								<input id="search" type="search" name="buscador" required>
@@ -398,7 +397,7 @@
 	}
 ?>
 <!-- BUSCAR -->
-		<tr class="blue darken-4">
+		<tr class="blue darken-5">
 			<td colspan="9">
 				<ul class="pagination center">
 					<li class="waves-effect">

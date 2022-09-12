@@ -55,7 +55,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>NOTICIAS</title>
+      <title>CONTACTO</title>
       <link rel="icon" href="imagenes/logo.png">
           <style>
     .row .col.m11 {
@@ -102,34 +102,13 @@
       .fon{
         background-color:red;
       }
-      .card-image {
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  width:auto;
-}
-.card .card-image img {
-margin: 0 0;
-}
+
 .rojo{
-  background-image: url('imagenes/suarez.png');
+  background-image: url('imagenes/nacional3.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: contain;
+  background-size: cover;
 }
-.row {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0px;
-    padding-top: 60px;
-    padding-left: 120px;
-}
-button, [type=button], [type=reset], [type=submit] {
-    -webkit-appearance: button;
-    /* right: 10px; */
-    left: 83px;
-}
-
 
         
 </style>
@@ -166,10 +145,9 @@ button, [type=button], [type=reset], [type=submit] {
                       </ul>
               </div>
     </nav>
-
 <!--Menu para Iniciar sesion (LOGIN) -->
-					<div id="modallogin" class="modal">
-		<div class="modal-content">
+					<div id="modallogin" class="modal" style="width: 25%; border-radius: 20px;">
+		<div class="modal-content center">
 			<h3>Login</h3>
 			<div class="container">
 				<form action="index.php?" method="POST" class="col s12">
@@ -185,16 +163,20 @@ button, [type=button], [type=reset], [type=submit] {
 							<label for="clave">Clave</label>
 						</div>
 					</div>	
-					<button class="btn waves-effect waves-light" type="submit" >Entrar
+					<button class="btn waves-effect waves-light red" type="submit" >Entrar
 						<i class="material-icons right">send</i>
-					</button>
+					</button><br><br>
+          <div class="container center">
+          <h4>No tienes cuenta?</h4>
+          <a class="waves-effect waves-light btn modal-trigger red tooltipped" data-position="bottom" data-tooltip="Salir" href="#modalregister">Registrate</a>
+            </div>
 				</form>
 			</div>
 		</div>
 	</div>
   <!--Menu para Cerrar Sesion (LOGOUT) -->
-  <div id="modallogout" class="modal">
-		<div class="modal-content">
+  <div id="modallogout" class="modal" style="width: 20%; border-radius: 20px;">
+		<div class="modal-content center">
 			<h4>Desea cerrar sesion?</h4>
 			<div class="container">
 				<form action="logout.php?" method="POST" class="col s12">
@@ -208,12 +190,48 @@ button, [type=button], [type=reset], [type=submit] {
 			</div>
 		</div>
 	</div>
+  <!--Menu para Registrarse -->
+  <div id="modalregister" class="modal" style="width: 40%; border-radius: 20px;">
+		<div class="modal-content center">
+			<h3 class="center">Registrarse</h3>
+			<div class="container">
+				<form action="index.php?" method="POST" class="col s12">
+					<div class="row">
+						<div class="input-field col s12">
+							<input placeholder="Nombre" id="nombre" type="text" class="validate" name="txtNombre">
+							<label for="nombre">Nombre</label>
+						</div>
+            <div class="input-field col s12">
+							<input placeholder="Apellido" id="apellido" type="text" class="validate" name="txtApellido">
+							<label for="apellido">Apellido</label>
+						</div>
+					</div>				
+					<div class="row">
+          <div class="input-field col s12">
+							<input placeholder="Email" id="email" type="email" class="validate" name="txtEmail">
+							<label for="email">Email</label>
+						</div>
+						<div class="input-field col s12">
+							<input placeholder="Clave" id="clave" type="text" class="validate" name="txtClave">
+							<label for="clave">Clave</label>
+						</div>
+					</div>	
+          <button class="btn waves-effect waves-light red" type="submit" name="accion" value="ingresar">Enviar
+					<i class="material-icons right">send</i>
+				</button>
+    
+				</form>
+			</div>
+		</div>
+	</div>
   </nav>
 <div class="container blue darken-5"></div>
 <!--Formulario de contacto-->
-  <div class="row">
-    <form class="col s12">
+  <div class="row" style="padding: 15px;">
+    <br><br><br><br>
+    <form class="col s12 borde white" style="border-radius: 20px; padding: 45px;">
       <div class="row">
+        <h2 class="center grey-text">Dejanos un mensaje!</h2>
         <div class="input-field col s6">
          <i class="material-icons prefix grey-text text-darken-2">face</i>
           <input id="icon_face" type="text" class="validate" required="required">
@@ -227,13 +245,6 @@ button, [type=button], [type=reset], [type=submit] {
       </div>
       <div class="row">
         <div class="input-field col s12">
-         <i class="material-icons prefix grey-text text-darken-2">assignment</i>
-          <input id="icon_subject" type="text" class="validate" required="required">
-          <label for="icon_subject">Asunto</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
          <i class="material-icons prefix grey-text text-darken-2">create</i>
           <textarea id="icon_message" class="materialize-textarea" required="required"></textarea>
           <label for="icon_message">Mensaje</label>
@@ -241,16 +252,44 @@ button, [type=button], [type=reset], [type=submit] {
       </div>
       <br>
       <div class="container center">
+        
       <button class="btn waves-effect waves-light blue darken-5" type="submit" name="action">Enviar
      <i class="material-icons right">send</i>
      </button>
       </div>
     </form>
   </div>
+
+  <?php 
+	if(isset($respuesta['codigo']) && $respuesta['codigo'] == "Error"  ){
+?>
+	<div class="red darken-3 center-align">	
+		<h3><?=$respuesta['mensaje']?></h3>
+	</div>
+<?php
+	}
+?>
+<?php
+	if(isset($respuesta['codigo']) && $respuesta['codigo'] == "OK"  ){
+?>
+	<div class="green lighten-2 center-align">	
+		<h3><?=$respuesta['mensaje']?></h3>
+	</div>
+<?php
+	}
+?>
+
   <main></main>
   <!--Footer-->
 <footer class="page-footer blue darken-6">
-          
+
+                      <a href="https://www.facebook.com/nacional/" class="fa fa-facebook"></a>
+                      <a href="https://twitter.com/Nacional" class="fa fa-twitter blue"></a>
+                      <p class="grey-text text-lighten-3 right" style="margin: 0 20px;">Lucas Acuña</p>
+                      <a class="ex1 text-lighten-3 right" href="https://nacional.uy" target="_blank">Oficial Web<i class="material-icons tiny">launch</i></a>
+                      
+                      <a href="https://www.instagram.com/nacional/?hl=es" class="fa fa-instagram"></a>
+
 </footer>
   <!--Scripts-->
   <script type="text/javascript" src="../backend/web/js/materialize.min.js"></script>

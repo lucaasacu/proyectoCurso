@@ -141,15 +141,6 @@
 
 		}
 
-		/*public function listaTipoDocumento(){
-
-			$arrayTipoDocumento = array();
-			$arrayTipoDocumento['CI'] = "CI";
-			$arrayTipoDocumento['Pasaporte'] = "Pasaporte";
-			return $arrayTipoDocumento;
-
-		}*/
-
 		public function login($email, $clave){
 
 			$claveMD5 = md5($clave);
